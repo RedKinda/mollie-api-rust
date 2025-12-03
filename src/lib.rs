@@ -6288,6 +6288,48 @@ pub mod types {
         }
     }
 
+    ///`EnableMethodIssuerResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "oneOf": [
+    ///    {
+    ///      "$ref": "#/components/schemas/giftcard"
+    ///    },
+    ///    {
+    ///      "$ref": "#/components/schemas/voucher"
+    ///    }
+    ///  ]
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    #[serde(untagged)]
+    pub enum EnableMethodIssuerResponse {
+        Giftcard(Giftcard),
+        Voucher(Voucher),
+    }
+
+    impl ::std::convert::From<&Self> for EnableMethodIssuerResponse {
+        fn from(value: &EnableMethodIssuerResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::convert::From<Giftcard> for EnableMethodIssuerResponse {
+        fn from(value: Giftcard) -> Self {
+            Self::Giftcard(value)
+        }
+    }
+
+    impl ::std::convert::From<Voucher> for EnableMethodIssuerResponse {
+        fn from(value: Voucher) -> Self {
+            Self::Voucher(value)
+        }
+    }
+
     ///`EnableMethodProfileId`
     ///
     /// <details><summary>JSON schema</summary>
@@ -26742,7 +26784,7 @@ pub mod types {
     ///        {
     ///          "chargebacks": {
     ///            "href": "https://api.mollie.com/v2/chargebacks?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "checkoutPreviewUrl": {
     ///            "href": "https://www.mollie.com/checkout/preview/pfl_2q3RyuMGry",
@@ -26758,19 +26800,19 @@ pub mod types {
     ///          },
     ///          "methods": {
     ///            "href": "https://api.mollie.com/v2/methods?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "payments": {
     ///            "href": "https://api.mollie.com/v2/payments?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "refunds": {
     ///            "href": "https://api.mollie.com/v2/refunds?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "self": {
     ///            "href": "...",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          }
     ///        }
     ///      ],
@@ -27105,7 +27147,7 @@ pub mod types {
     ///    {
     ///      "chargebacks": {
     ///        "href": "https://api.mollie.com/v2/chargebacks?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "checkoutPreviewUrl": {
     ///        "href": "https://www.mollie.com/checkout/preview/pfl_2q3RyuMGry",
@@ -27121,19 +27163,19 @@ pub mod types {
     ///      },
     ///      "methods": {
     ///        "href": "https://api.mollie.com/v2/methods?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "payments": {
     ///        "href": "https://api.mollie.com/v2/payments?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "refunds": {
     ///        "href": "https://api.mollie.com/v2/refunds?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "self": {
     ///        "href": "...",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      }
     ///    }
     ///  ],
@@ -27232,7 +27274,7 @@ pub mod types {
     ///        {
     ///          "chargebacks": {
     ///            "href": "https://api.mollie.com/v2/chargebacks?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "checkoutPreviewUrl": {
     ///            "href": "https://www.mollie.com/checkout/preview/pfl_2q3RyuMGry",
@@ -27248,19 +27290,19 @@ pub mod types {
     ///          },
     ///          "methods": {
     ///            "href": "https://api.mollie.com/v2/methods?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "payments": {
     ///            "href": "https://api.mollie.com/v2/payments?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "refunds": {
     ///            "href": "https://api.mollie.com/v2/refunds?profileId=pfl_2q3RyuMGry",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          },
     ///          "self": {
     ///            "href": "...",
-    ///            "type": "application/hal+json"
+    ///            "type": "application/json"
     ///          }
     ///        }
     ///      ],
@@ -27596,7 +27638,7 @@ pub mod types {
     ///    {
     ///      "chargebacks": {
     ///        "href": "https://api.mollie.com/v2/chargebacks?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "checkoutPreviewUrl": {
     ///        "href": "https://www.mollie.com/checkout/preview/pfl_2q3RyuMGry",
@@ -27612,19 +27654,19 @@ pub mod types {
     ///      },
     ///      "methods": {
     ///        "href": "https://api.mollie.com/v2/methods?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "payments": {
     ///        "href": "https://api.mollie.com/v2/payments?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "refunds": {
     ///        "href": "https://api.mollie.com/v2/refunds?profileId=pfl_2q3RyuMGry",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      },
     ///      "self": {
     ///        "href": "...",
-    ///        "type": "application/hal+json"
+    ///        "type": "application/json"
     ///      }
     ///    }
     ///  ],
@@ -33074,6 +33116,385 @@ pub mod types {
         }
     }
 
+    ///`GetClientResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "allOf": [
+    ///    {
+    ///      "$ref": "#/components/schemas/entity-client"
+    ///    },
+    ///    {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "_embedded": {
+    ///          "type": "object",
+    ///          "properties": {
+    ///            "capabilities": {
+    ///              "$ref": "#/components/schemas/entity-capability"
+    ///            },
+    ///            "onboarding": {
+    ///              "$ref": "#/components/schemas/entity-onboarding-status"
+    ///            },
+    ///            "organization": {
+    ///              "$ref": "#/components/schemas/entity-organization"
+    ///            }
+    ///          }
+    ///        }
+    ///      }
+    ///    }
+    ///  ]
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetClientResponse {
+        ///The commission object.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub commission: ::std::option::Option<GetClientResponseCommission>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<GetClientResponseEmbedded>,
+        ///The identifier uniquely referring to this client. Example:
+        /// `org_12345678`.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub id: ::std::option::Option<::std::string::String>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<GetClientResponseLinks>,
+        ///The date and time the client organization was created, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+        ///format.
+        #[serde(
+            rename = "organizationCreatedAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub organization_created_at: ::std::option::Option<::std::string::String>,
+        ///Indicates the response contains a client object. Will always contain
+        /// the string `client` for this resource type.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub resource: ::std::option::Option<::std::string::String>,
+    }
+
+    impl ::std::convert::From<&GetClientResponse> for GetClientResponse {
+        fn from(value: &GetClientResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetClientResponse {
+        fn default() -> Self {
+            Self {
+                commission: Default::default(),
+                embedded: Default::default(),
+                id: Default::default(),
+                links: Default::default(),
+                organization_created_at: Default::default(),
+                resource: Default::default(),
+            }
+        }
+    }
+
+    ///The commission object.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "The commission object.",
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "count": {
+    ///      "description": "The commission count.",
+    ///      "type": "integer"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetClientResponseCommission {
+        ///The commission count.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<i64>,
+    }
+
+    impl ::std::convert::From<&GetClientResponseCommission> for GetClientResponseCommission {
+        fn from(value: &GetClientResponseCommission) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetClientResponseCommission {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+            }
+        }
+    }
+
+    ///`GetClientResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "capabilities": {
+    ///      "$ref": "#/components/schemas/entity-capability"
+    ///    },
+    ///    "onboarding": {
+    ///      "$ref": "#/components/schemas/entity-onboarding-status"
+    ///    },
+    ///    "organization": {
+    ///      "$ref": "#/components/schemas/entity-organization"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetClientResponseEmbedded {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub capabilities: ::std::option::Option<EntityCapability>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub onboarding: ::std::option::Option<EntityOnboardingStatus>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub organization: ::std::option::Option<EntityOrganization>,
+    }
+
+    impl ::std::convert::From<&GetClientResponseEmbedded> for GetClientResponseEmbedded {
+        fn from(value: &GetClientResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetClientResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                capabilities: Default::default(),
+                onboarding: Default::default(),
+                organization: Default::default(),
+            }
+        }
+    }
+
+    ///An object with several relevant URLs. Every URL object will contain an
+    /// `href` and a `type` field.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "An object with several relevant URLs. Every URL object
+    /// will contain an `href` and a `type` field.",
+    ///  "readOnly": true,
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "onboarding": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "organization": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetClientResponseLinks {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<Url>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub onboarding: ::std::option::Option<Url>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub organization: ::std::option::Option<Url>,
+        #[serde(
+            rename = "self",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub self_: ::std::option::Option<Url>,
+    }
+
+    impl ::std::convert::From<&GetClientResponseLinks> for GetClientResponseLinks {
+        fn from(value: &GetClientResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetClientResponseLinks {
+        fn default() -> Self {
+            Self {
+                documentation: Default::default(),
+                onboarding: Default::default(),
+                organization: Default::default(),
+                self_: Default::default(),
+            }
+        }
+    }
+
+    ///`GetCustomerResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "allOf": [
+    ///    {
+    ///      "$ref": "#/components/schemas/customer-response"
+    ///    },
+    ///    {
+    ///      "properties": {
+    ///        "events": {
+    ///          "readOnly": true,
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-event"
+    ///          }
+    ///        }
+    ///      }
+    ///    }
+    ///  ]
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetCustomerResponse {
+        #[serde(
+            rename = "createdAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub created_at: ::std::option::Option<CreatedAt>,
+        ///The email address of the customer.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub email: ::std::option::Option<::std::string::String>,
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub events: ::std::vec::Vec<EntityEvent>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub id: ::std::option::Option<CustomerToken>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<GetCustomerResponseLinks>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub locale: ::std::option::Option<LocaleResponse>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub metadata: ::std::option::Option<Metadata>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub mode: ::std::option::Option<Mode>,
+        ///The full name of the customer.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub name: ::std::option::Option<::std::string::String>,
+        ///Indicates the response contains a customer object. Will always
+        /// contain the string `customer` for this endpoint.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub resource: ::std::option::Option<::std::string::String>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub testmode: ::std::option::Option<TestmodeCreate>,
+    }
+
+    impl ::std::convert::From<&GetCustomerResponse> for GetCustomerResponse {
+        fn from(value: &GetCustomerResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetCustomerResponse {
+        fn default() -> Self {
+            Self {
+                created_at: Default::default(),
+                email: Default::default(),
+                events: Default::default(),
+                id: Default::default(),
+                links: Default::default(),
+                locale: Default::default(),
+                metadata: Default::default(),
+                mode: Default::default(),
+                name: Default::default(),
+                resource: Default::default(),
+                testmode: Default::default(),
+            }
+        }
+    }
+
+    ///An object with several relevant URLs. Every URL object will contain an
+    /// `href` and a `type` field.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "An object with several relevant URLs. Every URL object
+    /// will contain an `href` and a `type` field.",
+    ///  "readOnly": true,
+    ///  "type": "object",
+    ///  "required": [
+    ///    "dashboard",
+    ///    "documentation",
+    ///    "self"
+    ///  ],
+    ///  "properties": {
+    ///    "dashboard": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "mandates": {
+    ///      "$ref": "#/components/schemas/url-nullable"
+    ///    },
+    ///    "payments": {
+    ///      "$ref": "#/components/schemas/url-nullable"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "subscriptions": {
+    ///      "$ref": "#/components/schemas/url-nullable"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetCustomerResponseLinks {
+        pub dashboard: Url,
+        pub documentation: Url,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub mandates: ::std::option::Option<UrlNullable>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub payments: ::std::option::Option<UrlNullable>,
+        #[serde(rename = "self")]
+        pub self_: Url,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub subscriptions: ::std::option::Option<UrlNullable>,
+    }
+
+    impl ::std::convert::From<&GetCustomerResponseLinks> for GetCustomerResponseLinks {
+        fn from(value: &GetCustomerResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
     ///`GetMethodLocale`
     ///
     /// <details><summary>JSON schema</summary>
@@ -33258,6 +33679,487 @@ pub mod types {
             value: ::std::string::String,
         ) -> ::std::result::Result<Self, self::error::ConversionError> {
             value.parse()
+        }
+    }
+
+    ///`GetPartnerStatusResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "partnerType",
+    ///    "resource"
+    ///  ],
+    ///  "properties": {
+    ///    "_links": {
+    ///      "description": "An object with several relevant URLs. Every URL
+    /// object will contain an `href` and a `type` field.",
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "documentation": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        },
+    ///        "self": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        },
+    ///        "signuplink": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        }
+    ///      }
+    ///    },
+    ///    "isCommissionPartner": {
+    ///      "description": "Whether the current organization is receiving
+    /// commissions.",
+    ///      "readOnly": true,
+    ///      "type": "boolean"
+    ///    },
+    ///    "partnerContractExpiresAt": {
+    ///      "description": "The expiration date of the signed partner contract, in ISO 8601 format. Omitted if contract has no\nexpiration date (yet).",
+    ///      "readOnly": true,
+    ///      "type": "string"
+    ///    },
+    ///    "partnerContractSignedAt": {
+    ///      "description": "The date the partner contract was signed, in ISO
+    /// 8601 format. Omitted if no contract has been signed\n(yet).",
+    ///      "readOnly": true,
+    ///      "type": [
+    ///        "string",
+    ///        "null"
+    ///      ]
+    ///    },
+    ///    "partnerContractUpdateAvailable": {
+    ///      "description": "Whether an update to the partner contract is
+    /// available and requiring the organization's agreement.",
+    ///      "readOnly": true,
+    ///      "type": "boolean"
+    ///    },
+    ///    "partnerType": {
+    ///      "description": "Indicates the type of partner. Will be `null` if
+    /// the currently authenticated organization is not\nenrolled as a
+    /// partner.",
+    ///      "readOnly": true,
+    ///      "type": [
+    ///        "string",
+    ///        "null"
+    ///      ],
+    ///      "enum": [
+    ///        "oauth",
+    ///        "signuplink",
+    ///        "useragent"
+    ///      ]
+    ///    },
+    ///    "resource": {
+    ///      "description": "Indicates the response contains a partner status object. Will always contain the string `partner` for\nthis endpoint.",
+    ///      "readOnly": true,
+    ///      "examples": [
+    ///        "partner"
+    ///      ],
+    ///      "type": "string"
+    ///    },
+    ///    "userAgentTokens": {
+    ///      "description": "Array of User-Agent token objects. Present if the
+    /// organization is a partner of type `useragent`, or if\nthey were in the
+    /// past.",
+    ///      "readOnly": true,
+    ///      "type": "array",
+    ///      "items": {
+    ///        "type": "object",
+    ///        "properties": {
+    ///          "endsAt": {
+    ///            "description": "The date until when the token will be active,
+    /// in ISO 8601 format. Will be `null` if the token\ndoes not have an end
+    /// date (yet).",
+    ///            "type": [
+    ///              "string",
+    ///              "null"
+    ///            ]
+    ///          },
+    ///          "startsAt": {
+    ///            "description": "The date from which the token is active, in
+    /// ISO 8601 format.",
+    ///            "type": "string"
+    ///          },
+    ///          "token": {
+    ///            "description": "The unique User-Agent token.",
+    ///            "type": "string"
+    ///          }
+    ///        }
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetPartnerStatusResponse {
+        ///Whether the current organization is receiving commissions.
+        #[serde(
+            rename = "isCommissionPartner",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub is_commission_partner: ::std::option::Option<bool>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<GetPartnerStatusResponseLinks>,
+        ///The expiration date of the signed partner contract, in ISO 8601
+        /// format. Omitted if contract has no expiration date (yet).
+        #[serde(
+            rename = "partnerContractExpiresAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub partner_contract_expires_at: ::std::option::Option<::std::string::String>,
+        ///The date the partner contract was signed, in ISO 8601 format.
+        /// Omitted if no contract has been signed (yet).
+        #[serde(
+            rename = "partnerContractSignedAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub partner_contract_signed_at: ::std::option::Option<::std::string::String>,
+        ///Whether an update to the partner contract is available and requiring
+        /// the organization's agreement.
+        #[serde(
+            rename = "partnerContractUpdateAvailable",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub partner_contract_update_available: ::std::option::Option<bool>,
+        ///Indicates the type of partner. Will be `null` if the currently
+        /// authenticated organization is not enrolled as a partner.
+        #[serde(rename = "partnerType")]
+        pub partner_type: ::std::option::Option<GetPartnerStatusResponsePartnerType>,
+        ///Indicates the response contains a partner status object. Will always
+        /// contain the string `partner` for this endpoint.
+        pub resource: ::std::string::String,
+        ///Array of User-Agent token objects. Present if the organization is a
+        /// partner of type `useragent`, or if they were in the past.
+        #[serde(
+            rename = "userAgentTokens",
+            default,
+            skip_serializing_if = "::std::vec::Vec::is_empty"
+        )]
+        pub user_agent_tokens: ::std::vec::Vec<GetPartnerStatusResponseUserAgentTokensItem>,
+    }
+
+    impl ::std::convert::From<&GetPartnerStatusResponse> for GetPartnerStatusResponse {
+        fn from(value: &GetPartnerStatusResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///An object with several relevant URLs. Every URL object will contain an
+    /// `href` and a `type` field.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "An object with several relevant URLs. Every URL object
+    /// will contain an `href` and a `type` field.",
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "signuplink": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetPartnerStatusResponseLinks {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<Url>,
+        #[serde(
+            rename = "self",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub self_: ::std::option::Option<Url>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub signuplink: ::std::option::Option<Url>,
+    }
+
+    impl ::std::convert::From<&GetPartnerStatusResponseLinks> for GetPartnerStatusResponseLinks {
+        fn from(value: &GetPartnerStatusResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetPartnerStatusResponseLinks {
+        fn default() -> Self {
+            Self {
+                documentation: Default::default(),
+                self_: Default::default(),
+                signuplink: Default::default(),
+            }
+        }
+    }
+
+    ///Indicates the type of partner. Will be `null` if the currently
+    /// authenticated organization is not enrolled as a partner.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "Indicates the type of partner. Will be `null` if the currently authenticated organization is not\nenrolled as a partner.",
+    ///  "readOnly": true,
+    ///  "type": "string",
+    ///  "enum": [
+    ///    "oauth",
+    ///    "signuplink",
+    ///    "useragent"
+    ///  ]
+    ///}
+    /// ```
+    /// </details>
+    #[derive(
+        :: serde :: Deserialize,
+        :: serde :: Serialize,
+        Clone,
+        Copy,
+        Debug,
+        Eq,
+        Hash,
+        Ord,
+        PartialEq,
+        PartialOrd,
+    )]
+    pub enum GetPartnerStatusResponsePartnerType {
+        #[serde(rename = "oauth")]
+        Oauth,
+        #[serde(rename = "signuplink")]
+        Signuplink,
+        #[serde(rename = "useragent")]
+        Useragent,
+    }
+
+    impl ::std::convert::From<&Self> for GetPartnerStatusResponsePartnerType {
+        fn from(value: &GetPartnerStatusResponsePartnerType) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::fmt::Display for GetPartnerStatusResponsePartnerType {
+        fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+            match *self {
+                Self::Oauth => f.write_str("oauth"),
+                Self::Signuplink => f.write_str("signuplink"),
+                Self::Useragent => f.write_str("useragent"),
+            }
+        }
+    }
+
+    impl ::std::str::FromStr for GetPartnerStatusResponsePartnerType {
+        type Err = self::error::ConversionError;
+        fn from_str(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
+            match value {
+                "oauth" => Ok(Self::Oauth),
+                "signuplink" => Ok(Self::Signuplink),
+                "useragent" => Ok(Self::Useragent),
+                _ => Err("invalid value".into()),
+            }
+        }
+    }
+
+    impl ::std::convert::TryFrom<&str> for GetPartnerStatusResponsePartnerType {
+        type Error = self::error::ConversionError;
+        fn try_from(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
+            value.parse()
+        }
+    }
+
+    impl ::std::convert::TryFrom<&::std::string::String> for GetPartnerStatusResponsePartnerType {
+        type Error = self::error::ConversionError;
+        fn try_from(
+            value: &::std::string::String,
+        ) -> ::std::result::Result<Self, self::error::ConversionError> {
+            value.parse()
+        }
+    }
+
+    impl ::std::convert::TryFrom<::std::string::String> for GetPartnerStatusResponsePartnerType {
+        type Error = self::error::ConversionError;
+        fn try_from(
+            value: ::std::string::String,
+        ) -> ::std::result::Result<Self, self::error::ConversionError> {
+            value.parse()
+        }
+    }
+
+    ///`GetPartnerStatusResponseUserAgentTokensItem`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "endsAt": {
+    ///      "description": "The date until when the token will be active, in
+    /// ISO 8601 format. Will be `null` if the token\ndoes not have an end date
+    /// (yet).",
+    ///      "type": [
+    ///        "string",
+    ///        "null"
+    ///      ]
+    ///    },
+    ///    "startsAt": {
+    ///      "description": "The date from which the token is active, in ISO
+    /// 8601 format.",
+    ///      "type": "string"
+    ///    },
+    ///    "token": {
+    ///      "description": "The unique User-Agent token.",
+    ///      "type": "string"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetPartnerStatusResponseUserAgentTokensItem {
+        ///The date until when the token will be active, in ISO 8601 format.
+        /// Will be `null` if the token does not have an end date (yet).
+        #[serde(
+            rename = "endsAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub ends_at: ::std::option::Option<::std::string::String>,
+        ///The date from which the token is active, in ISO 8601 format.
+        #[serde(
+            rename = "startsAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub starts_at: ::std::option::Option<::std::string::String>,
+        ///The unique User-Agent token.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub token: ::std::option::Option<::std::string::String>,
+    }
+
+    impl ::std::convert::From<&GetPartnerStatusResponseUserAgentTokensItem>
+        for GetPartnerStatusResponseUserAgentTokensItem
+    {
+        fn from(value: &GetPartnerStatusResponseUserAgentTokensItem) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetPartnerStatusResponseUserAgentTokensItem {
+        fn default() -> Self {
+            Self {
+                ends_at: Default::default(),
+                starts_at: Default::default(),
+                token: Default::default(),
+            }
+        }
+    }
+
+    ///`GetPaymentLinkPaymentsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "payments": {
+    ///          "description": "An array of payment objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/payment-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetPaymentLinkPaymentsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: GetPaymentLinkPaymentsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&GetPaymentLinkPaymentsResponse> for GetPaymentLinkPaymentsResponse {
+        fn from(value: &GetPaymentLinkPaymentsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`GetPaymentLinkPaymentsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "payments": {
+    ///      "description": "An array of payment objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/payment-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct GetPaymentLinkPaymentsResponseEmbedded {
+        ///An array of payment objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub payments: ::std::vec::Vec<PaymentResponse>,
+    }
+
+    impl ::std::convert::From<&GetPaymentLinkPaymentsResponseEmbedded>
+        for GetPaymentLinkPaymentsResponseEmbedded
+    {
+        fn from(value: &GetPaymentLinkPaymentsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for GetPaymentLinkPaymentsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                payments: Default::default(),
+            }
         }
     }
 
@@ -33918,6 +34820,112 @@ pub mod types {
         }
     }
 
+    ///`ListAllChargebacksResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "chargebacks": {
+    ///          "description": "A list of chargeback objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-chargeback"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllChargebacksResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListAllChargebacksResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListAllChargebacksResponse> for ListAllChargebacksResponse {
+        fn from(value: &ListAllChargebacksResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListAllChargebacksResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListAllChargebacksResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "chargebacks": {
+    ///      "description": "A list of chargeback objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-chargeback"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllChargebacksResponseEmbedded {
+        ///A list of chargeback objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub chargebacks: ::std::vec::Vec<EntityChargeback>,
+    }
+
+    impl ::std::convert::From<&ListAllChargebacksResponseEmbedded>
+        for ListAllChargebacksResponseEmbedded
+    {
+        fn from(value: &ListAllChargebacksResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListAllChargebacksResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                chargebacks: Default::default(),
+            }
+        }
+    }
+
     ///`ListAllChargebacksSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -34192,6 +35200,240 @@ pub mod types {
         }
     }
 
+    ///`ListAllMethodsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "methods"
+    ///      ],
+    ///      "properties": {
+    ///        "methods": {
+    ///          "description": "An array of payment method objects. For a
+    /// complete\nreference of the payment method object, refer to the [Get
+    /// payment method endpoint](get-method)\ndocumentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-method-all"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "documentation",
+    ///        "self"
+    ///      ],
+    ///      "properties": {
+    ///        "documentation": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        },
+    ///        "self": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        }
+    ///      }
+    ///    },
+    ///    "count": {
+    ///      "description": "The number of payment method objects in this result
+    /// set. Results are **not** paginated.",
+    ///      "examples": [
+    ///        5
+    ///      ],
+    ///      "type": "integer"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllMethodsResponse {
+        ///The number of payment method objects in this result set. Results are
+        /// **not** paginated.
+        pub count: i64,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListAllMethodsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListAllMethodsResponseLinks,
+    }
+
+    impl ::std::convert::From<&ListAllMethodsResponse> for ListAllMethodsResponse {
+        fn from(value: &ListAllMethodsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListAllMethodsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "methods"
+    ///  ],
+    ///  "properties": {
+    ///    "methods": {
+    ///      "description": "An array of payment method objects. For a
+    /// complete\nreference of the payment method object, refer to the [Get
+    /// payment method endpoint](get-method)\ndocumentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-method-all"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllMethodsResponseEmbedded {
+        ///An array of payment method objects. For a complete
+        ///reference of the payment method object, refer to the [Get payment
+        /// method endpoint](get-method) documentation.
+        pub methods: ::std::vec::Vec<EntityMethodAll>,
+    }
+
+    impl ::std::convert::From<&ListAllMethodsResponseEmbedded> for ListAllMethodsResponseEmbedded {
+        fn from(value: &ListAllMethodsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListAllMethodsResponseLinks`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "documentation",
+    ///    "self"
+    ///  ],
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllMethodsResponseLinks {
+        pub documentation: Url,
+        #[serde(rename = "self")]
+        pub self_: Url,
+    }
+
+    impl ::std::convert::From<&ListAllMethodsResponseLinks> for ListAllMethodsResponseLinks {
+        fn from(value: &ListAllMethodsResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListAllRefundsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "refunds"
+    ///      ],
+    ///      "properties": {
+    ///        "refunds": {
+    ///          "description": "An array of refund objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-refund-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllRefundsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListAllRefundsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListAllRefundsResponse> for ListAllRefundsResponse {
+        fn from(value: &ListAllRefundsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListAllRefundsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "refunds"
+    ///  ],
+    ///  "properties": {
+    ///    "refunds": {
+    ///      "description": "An array of refund objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-refund-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllRefundsResponseEmbedded {
+        ///An array of refund objects.
+        pub refunds: ::std::vec::Vec<EntityRefundResponse>,
+    }
+
+    impl ::std::convert::From<&ListAllRefundsResponseEmbedded> for ListAllRefundsResponseEmbedded {
+        fn from(value: &ListAllRefundsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
     ///`ListAllRefundsSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -34276,6 +35518,1206 @@ pub mod types {
             value: ::std::string::String,
         ) -> ::std::result::Result<Self, self::error::ConversionError> {
             value.parse()
+        }
+    }
+
+    ///`ListAllSubscriptionsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "subscriptions": {
+    ///          "description": "A list of subscription objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/subscription-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllSubscriptionsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListAllSubscriptionsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListAllSubscriptionsResponse> for ListAllSubscriptionsResponse {
+        fn from(value: &ListAllSubscriptionsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListAllSubscriptionsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "subscriptions": {
+    ///      "description": "A list of subscription objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/subscription-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListAllSubscriptionsResponseEmbedded {
+        ///A list of subscription objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub subscriptions: ::std::vec::Vec<SubscriptionResponse>,
+    }
+
+    impl ::std::convert::From<&ListAllSubscriptionsResponseEmbedded>
+        for ListAllSubscriptionsResponseEmbedded
+    {
+        fn from(value: &ListAllSubscriptionsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListAllSubscriptionsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                subscriptions: Default::default(),
+            }
+        }
+    }
+
+    ///`ListBalanceTransactionsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "balance_transactions": {
+    ///          "description": "An array of balance transaction objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-balance-transaction"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListBalanceTransactionsResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListBalanceTransactionsResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListBalanceTransactionsResponse> for ListBalanceTransactionsResponse {
+        fn from(value: &ListBalanceTransactionsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListBalanceTransactionsResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListBalanceTransactionsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "balance_transactions": {
+    ///      "description": "An array of balance transaction objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-balance-transaction"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListBalanceTransactionsResponseEmbedded {
+        ///An array of balance transaction objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub balance_transactions: ::std::vec::Vec<EntityBalanceTransaction>,
+    }
+
+    impl ::std::convert::From<&ListBalanceTransactionsResponseEmbedded>
+        for ListBalanceTransactionsResponseEmbedded
+    {
+        fn from(value: &ListBalanceTransactionsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListBalanceTransactionsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                balance_transactions: Default::default(),
+            }
+        }
+    }
+
+    ///`ListBalancesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "balances": {
+    ///          "description": "An array of balance objects. For a complete
+    /// reference of\nthe balance object, refer to the [Get balance
+    /// endpoint](get-balance) documentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-balance"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListBalancesResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListBalancesResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListBalancesResponse> for ListBalancesResponse {
+        fn from(value: &ListBalancesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListBalancesResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListBalancesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "balances": {
+    ///      "description": "An array of balance objects. For a complete
+    /// reference of\nthe balance object, refer to the [Get balance
+    /// endpoint](get-balance) documentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-balance"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListBalancesResponseEmbedded {
+        ///An array of balance objects. For a complete reference of
+        ///the balance object, refer to the [Get balance endpoint](get-balance)
+        /// documentation.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub balances: ::std::vec::Vec<EntityBalance>,
+    }
+
+    impl ::std::convert::From<&ListBalancesResponseEmbedded> for ListBalancesResponseEmbedded {
+        fn from(value: &ListBalancesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListBalancesResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                balances: Default::default(),
+            }
+        }
+    }
+
+    ///`ListCapabilitiesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "capabilities": {
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-capability"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "documentation": {
+    ///          "type": "object",
+    ///          "properties": {
+    ///            "href": {
+    ///              "type": "string"
+    ///            },
+    ///            "type": {
+    ///              "type": "string"
+    ///            }
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "count": {
+    ///      "description": "The number of items in this result set.",
+    ///      "examples": [
+    ///        2
+    ///      ],
+    ///      "type": "integer"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCapabilitiesResponse {
+        ///The number of items in this result set.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<i64>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListCapabilitiesResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListCapabilitiesResponseLinks>,
+    }
+
+    impl ::std::convert::From<&ListCapabilitiesResponse> for ListCapabilitiesResponse {
+        fn from(value: &ListCapabilitiesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListCapabilitiesResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListCapabilitiesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "capabilities": {
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-capability"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCapabilitiesResponseEmbedded {
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub capabilities: ::std::vec::Vec<EntityCapability>,
+    }
+
+    impl ::std::convert::From<&ListCapabilitiesResponseEmbedded> for ListCapabilitiesResponseEmbedded {
+        fn from(value: &ListCapabilitiesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListCapabilitiesResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                capabilities: Default::default(),
+            }
+        }
+    }
+
+    ///`ListCapabilitiesResponseLinks`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "href": {
+    ///          "type": "string"
+    ///        },
+    ///        "type": {
+    ///          "type": "string"
+    ///        }
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCapabilitiesResponseLinks {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<ListCapabilitiesResponseLinksDocumentation>,
+    }
+
+    impl ::std::convert::From<&ListCapabilitiesResponseLinks> for ListCapabilitiesResponseLinks {
+        fn from(value: &ListCapabilitiesResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListCapabilitiesResponseLinks {
+        fn default() -> Self {
+            Self {
+                documentation: Default::default(),
+            }
+        }
+    }
+
+    ///`ListCapabilitiesResponseLinksDocumentation`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "href": {
+    ///      "type": "string"
+    ///    },
+    ///    "type": {
+    ///      "type": "string"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCapabilitiesResponseLinksDocumentation {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub href: ::std::option::Option<::std::string::String>,
+        #[serde(
+            rename = "type",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub type_: ::std::option::Option<::std::string::String>,
+    }
+
+    impl ::std::convert::From<&ListCapabilitiesResponseLinksDocumentation>
+        for ListCapabilitiesResponseLinksDocumentation
+    {
+        fn from(value: &ListCapabilitiesResponseLinksDocumentation) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListCapabilitiesResponseLinksDocumentation {
+        fn default() -> Self {
+            Self {
+                href: Default::default(),
+                type_: Default::default(),
+            }
+        }
+    }
+
+    ///`ListCapturesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "captures"
+    ///      ],
+    ///      "properties": {
+    ///        "captures": {
+    ///          "description": "An array of capture objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/capture-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCapturesResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListCapturesResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListCapturesResponse> for ListCapturesResponse {
+        fn from(value: &ListCapturesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListCapturesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "captures"
+    ///  ],
+    ///  "properties": {
+    ///    "captures": {
+    ///      "description": "An array of capture objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/capture-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCapturesResponseEmbedded {
+        ///An array of capture objects.
+        pub captures: ::std::vec::Vec<CaptureResponse>,
+    }
+
+    impl ::std::convert::From<&ListCapturesResponseEmbedded> for ListCapturesResponseEmbedded {
+        fn from(value: &ListCapturesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListChargebacksResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "chargebacks": {
+    ///          "description": "A list of chargeback objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-chargeback"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListChargebacksResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListChargebacksResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListChargebacksResponse> for ListChargebacksResponse {
+        fn from(value: &ListChargebacksResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListChargebacksResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListChargebacksResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "chargebacks": {
+    ///      "description": "A list of chargeback objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-chargeback"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListChargebacksResponseEmbedded {
+        ///A list of chargeback objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub chargebacks: ::std::vec::Vec<EntityChargeback>,
+    }
+
+    impl ::std::convert::From<&ListChargebacksResponseEmbedded> for ListChargebacksResponseEmbedded {
+        fn from(value: &ListChargebacksResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListChargebacksResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                chargebacks: Default::default(),
+            }
+        }
+    }
+
+    ///`ListClientsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "clients": {
+    ///          "description": "An array of client objects. For a complete
+    /// reference of the client object, refer to the\n[Get client
+    /// endpoint](get-client) documentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "allOf": [
+    ///              {
+    ///                "$ref": "#/components/schemas/entity-client"
+    ///              },
+    ///              {
+    ///                "type": "object",
+    ///                "properties": {
+    ///                  "_embedded": {
+    ///                    "type": "object",
+    ///                    "properties": {
+    ///                      "capabilities": {
+    ///                        "$ref": "#/components/schemas/entity-capability"
+    ///                      },
+    ///                      "onboarding": {
+    ///                        "$ref":
+    /// "#/components/schemas/entity-onboarding-status"
+    ///                      },
+    ///                      "organization": {
+    ///                        "$ref":
+    /// "#/components/schemas/entity-organization"
+    ///                      }
+    ///                    }
+    ///                  }
+    ///                }
+    ///              }
+    ///            ]
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListClientsResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListClientsResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListClientsResponse> for ListClientsResponse {
+        fn from(value: &ListClientsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListClientsResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListClientsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "clients": {
+    ///      "description": "An array of client objects. For a complete
+    /// reference of the client object, refer to the\n[Get client
+    /// endpoint](get-client) documentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "allOf": [
+    ///          {
+    ///            "$ref": "#/components/schemas/entity-client"
+    ///          },
+    ///          {
+    ///            "type": "object",
+    ///            "properties": {
+    ///              "_embedded": {
+    ///                "type": "object",
+    ///                "properties": {
+    ///                  "capabilities": {
+    ///                    "$ref": "#/components/schemas/entity-capability"
+    ///                  },
+    ///                  "onboarding": {
+    ///                    "$ref":
+    /// "#/components/schemas/entity-onboarding-status"
+    ///                  },
+    ///                  "organization": {
+    ///                    "$ref": "#/components/schemas/entity-organization"
+    ///                  }
+    ///                }
+    ///              }
+    ///            }
+    ///          }
+    ///        ]
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListClientsResponseEmbedded {
+        ///An array of client objects. For a complete reference of the client
+        /// object, refer to the [Get client endpoint](get-client)
+        /// documentation.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub clients: ::std::vec::Vec<ListClientsResponseEmbeddedClientsItem>,
+    }
+
+    impl ::std::convert::From<&ListClientsResponseEmbedded> for ListClientsResponseEmbedded {
+        fn from(value: &ListClientsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListClientsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                clients: Default::default(),
+            }
+        }
+    }
+
+    ///`ListClientsResponseEmbeddedClientsItem`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "allOf": [
+    ///    {
+    ///      "$ref": "#/components/schemas/entity-client"
+    ///    },
+    ///    {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "_embedded": {
+    ///          "type": "object",
+    ///          "properties": {
+    ///            "capabilities": {
+    ///              "$ref": "#/components/schemas/entity-capability"
+    ///            },
+    ///            "onboarding": {
+    ///              "$ref": "#/components/schemas/entity-onboarding-status"
+    ///            },
+    ///            "organization": {
+    ///              "$ref": "#/components/schemas/entity-organization"
+    ///            }
+    ///          }
+    ///        }
+    ///      }
+    ///    }
+    ///  ]
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListClientsResponseEmbeddedClientsItem {
+        ///The commission object.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub commission: ::std::option::Option<ListClientsResponseEmbeddedClientsItemCommission>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListClientsResponseEmbeddedClientsItemEmbedded>,
+        ///The identifier uniquely referring to this client. Example:
+        /// `org_12345678`.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub id: ::std::option::Option<::std::string::String>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListClientsResponseEmbeddedClientsItemLinks>,
+        ///The date and time the client organization was created, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+        ///format.
+        #[serde(
+            rename = "organizationCreatedAt",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub organization_created_at: ::std::option::Option<::std::string::String>,
+        ///Indicates the response contains a client object. Will always contain
+        /// the string `client` for this resource type.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub resource: ::std::option::Option<::std::string::String>,
+    }
+
+    impl ::std::convert::From<&ListClientsResponseEmbeddedClientsItem>
+        for ListClientsResponseEmbeddedClientsItem
+    {
+        fn from(value: &ListClientsResponseEmbeddedClientsItem) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListClientsResponseEmbeddedClientsItem {
+        fn default() -> Self {
+            Self {
+                commission: Default::default(),
+                embedded: Default::default(),
+                id: Default::default(),
+                links: Default::default(),
+                organization_created_at: Default::default(),
+                resource: Default::default(),
+            }
+        }
+    }
+
+    ///The commission object.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "The commission object.",
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "count": {
+    ///      "description": "The commission count.",
+    ///      "type": "integer"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListClientsResponseEmbeddedClientsItemCommission {
+        ///The commission count.
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<i64>,
+    }
+
+    impl ::std::convert::From<&ListClientsResponseEmbeddedClientsItemCommission>
+        for ListClientsResponseEmbeddedClientsItemCommission
+    {
+        fn from(value: &ListClientsResponseEmbeddedClientsItemCommission) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListClientsResponseEmbeddedClientsItemCommission {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+            }
+        }
+    }
+
+    ///`ListClientsResponseEmbeddedClientsItemEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "capabilities": {
+    ///      "$ref": "#/components/schemas/entity-capability"
+    ///    },
+    ///    "onboarding": {
+    ///      "$ref": "#/components/schemas/entity-onboarding-status"
+    ///    },
+    ///    "organization": {
+    ///      "$ref": "#/components/schemas/entity-organization"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListClientsResponseEmbeddedClientsItemEmbedded {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub capabilities: ::std::option::Option<EntityCapability>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub onboarding: ::std::option::Option<EntityOnboardingStatus>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub organization: ::std::option::Option<EntityOrganization>,
+    }
+
+    impl ::std::convert::From<&ListClientsResponseEmbeddedClientsItemEmbedded>
+        for ListClientsResponseEmbeddedClientsItemEmbedded
+    {
+        fn from(value: &ListClientsResponseEmbeddedClientsItemEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListClientsResponseEmbeddedClientsItemEmbedded {
+        fn default() -> Self {
+            Self {
+                capabilities: Default::default(),
+                onboarding: Default::default(),
+                organization: Default::default(),
+            }
+        }
+    }
+
+    ///An object with several relevant URLs. Every URL object will contain an
+    /// `href` and a `type` field.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "An object with several relevant URLs. Every URL object
+    /// will contain an `href` and a `type` field.",
+    ///  "readOnly": true,
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "onboarding": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "organization": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListClientsResponseEmbeddedClientsItemLinks {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<Url>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub onboarding: ::std::option::Option<Url>,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub organization: ::std::option::Option<Url>,
+        #[serde(
+            rename = "self",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub self_: ::std::option::Option<Url>,
+    }
+
+    impl ::std::convert::From<&ListClientsResponseEmbeddedClientsItemLinks>
+        for ListClientsResponseEmbeddedClientsItemLinks
+    {
+        fn from(value: &ListClientsResponseEmbeddedClientsItemLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListClientsResponseEmbeddedClientsItemLinks {
+        fn default() -> Self {
+            Self {
+                documentation: Default::default(),
+                onboarding: Default::default(),
+                organization: Default::default(),
+                self_: Default::default(),
+            }
+        }
+    }
+
+    ///`ListConnectBalanceTransfersResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "connect_balance_transfers"
+    ///      ],
+    ///      "properties": {
+    ///        "connect_balance_transfers": {
+    ///          "description": "A list of Connect balance transfers.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref":
+    /// "#/components/schemas/entity-balance-transfer-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListConnectBalanceTransfersResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListConnectBalanceTransfersResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListConnectBalanceTransfersResponse>
+        for ListConnectBalanceTransfersResponse
+    {
+        fn from(value: &ListConnectBalanceTransfersResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListConnectBalanceTransfersResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "connect_balance_transfers"
+    ///  ],
+    ///  "properties": {
+    ///    "connect_balance_transfers": {
+    ///      "description": "A list of Connect balance transfers.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-balance-transfer-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListConnectBalanceTransfersResponseEmbedded {
+        ///A list of Connect balance transfers.
+        pub connect_balance_transfers: ::std::vec::Vec<EntityBalanceTransferResponse>,
+    }
+
+    impl ::std::convert::From<&ListConnectBalanceTransfersResponseEmbedded>
+        for ListConnectBalanceTransfersResponseEmbedded
+    {
+        fn from(value: &ListConnectBalanceTransfersResponseEmbedded) -> Self {
+            value.clone()
         }
     }
 
@@ -34452,6 +36894,98 @@ pub mod types {
         }
     }
 
+    ///`ListCustomerPaymentsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "payments": {
+    ///          "description": "An array of payment objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/payment-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCustomerPaymentsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListCustomerPaymentsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListCustomerPaymentsResponse> for ListCustomerPaymentsResponse {
+        fn from(value: &ListCustomerPaymentsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListCustomerPaymentsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "payments": {
+    ///      "description": "An array of payment objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/payment-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCustomerPaymentsResponseEmbedded {
+        ///An array of payment objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub payments: ::std::vec::Vec<PaymentResponse>,
+    }
+
+    impl ::std::convert::From<&ListCustomerPaymentsResponseEmbedded>
+        for ListCustomerPaymentsResponseEmbedded
+    {
+        fn from(value: &ListCustomerPaymentsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListCustomerPaymentsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                payments: Default::default(),
+            }
+        }
+    }
+
     ///`ListCustomerPaymentsSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -34536,6 +37070,93 @@ pub mod types {
             value: ::std::string::String,
         ) -> ::std::result::Result<Self, self::error::ConversionError> {
             value.parse()
+        }
+    }
+
+    ///`ListCustomersResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "customers"
+    ///      ],
+    ///      "properties": {
+    ///        "customers": {
+    ///          "description": "An array of customer objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/customer-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCustomersResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListCustomersResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListCustomersResponse> for ListCustomersResponse {
+        fn from(value: &ListCustomersResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListCustomersResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "customers"
+    ///  ],
+    ///  "properties": {
+    ///    "customers": {
+    ///      "description": "An array of customer objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/customer-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListCustomersResponseEmbedded {
+        ///An array of customer objects.
+        pub customers: ::std::vec::Vec<CustomerResponse>,
+    }
+
+    impl ::std::convert::From<&ListCustomersResponseEmbedded> for ListCustomersResponseEmbedded {
+        fn from(value: &ListCustomersResponseEmbedded) -> Self {
+            value.clone()
         }
     }
 
@@ -34712,6 +37333,117 @@ pub mod types {
         }
     }
 
+    ///`ListInvoicesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "invoices": {
+    ///          "description": "An array of invoice objects. For a complete
+    /// reference of\nthe invoice object, refer to the [Get invoice
+    /// endpoint](get-invoice) documentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "type": "object"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListInvoicesResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListInvoicesResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListInvoicesResponse> for ListInvoicesResponse {
+        fn from(value: &ListInvoicesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListInvoicesResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListInvoicesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "invoices": {
+    ///      "description": "An array of invoice objects. For a complete
+    /// reference of\nthe invoice object, refer to the [Get invoice
+    /// endpoint](get-invoice) documentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "type": "object"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListInvoicesResponseEmbedded {
+        ///An array of invoice objects. For a complete reference of
+        ///the invoice object, refer to the [Get invoice endpoint](get-invoice)
+        /// documentation.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub invoices:
+            ::std::vec::Vec<::serde_json::Map<::std::string::String, ::serde_json::Value>>,
+    }
+
+    impl ::std::convert::From<&ListInvoicesResponseEmbedded> for ListInvoicesResponseEmbedded {
+        fn from(value: &ListInvoicesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListInvoicesResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                invoices: Default::default(),
+            }
+        }
+    }
+
     ///`ListInvoicesSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -34843,6 +37575,93 @@ pub mod types {
 
     impl ::std::convert::From<&ListLinks> for ListLinks {
         fn from(value: &ListLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListMandatesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "mandates"
+    ///      ],
+    ///      "properties": {
+    ///        "mandates": {
+    ///          "description": "An array of mandate objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/mandate-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListMandatesResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListMandatesResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListMandatesResponse> for ListMandatesResponse {
+        fn from(value: &ListMandatesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListMandatesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "mandates"
+    ///  ],
+    ///  "properties": {
+    ///    "mandates": {
+    ///      "description": "An array of mandate objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/mandate-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListMandatesResponseEmbedded {
+        ///An array of mandate objects.
+        pub mandates: ::std::vec::Vec<MandateResponse>,
+    }
+
+    impl ::std::convert::From<&ListMandatesResponseEmbedded> for ListMandatesResponseEmbedded {
+        fn from(value: &ListMandatesResponseEmbedded) -> Self {
             value.clone()
         }
     }
@@ -35290,6 +38109,334 @@ pub mod types {
         }
     }
 
+    ///`ListMethodsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "methods"
+    ///      ],
+    ///      "properties": {
+    ///        "methods": {
+    ///          "description": "An array of payment method objects. For a
+    /// complete\nreference of the payment method object, refer\nto the [Get
+    /// payment method endpoint](get-method)\ndocumentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-method"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "documentation",
+    ///        "self"
+    ///      ],
+    ///      "properties": {
+    ///        "documentation": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        },
+    ///        "self": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        }
+    ///      }
+    ///    },
+    ///    "count": {
+    ///      "description": "The number of payment method objects in this result
+    /// set.\nResults are **not** paginated.",
+    ///      "examples": [
+    ///        5
+    ///      ],
+    ///      "type": "integer"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListMethodsResponse {
+        ///The number of payment method objects in this result set.
+        ///Results are **not** paginated.
+        pub count: i64,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListMethodsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListMethodsResponseLinks,
+    }
+
+    impl ::std::convert::From<&ListMethodsResponse> for ListMethodsResponse {
+        fn from(value: &ListMethodsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListMethodsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "methods"
+    ///  ],
+    ///  "properties": {
+    ///    "methods": {
+    ///      "description": "An array of payment method objects. For a
+    /// complete\nreference of the payment method object, refer\nto the [Get
+    /// payment method endpoint](get-method)\ndocumentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-method"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListMethodsResponseEmbedded {
+        ///An array of payment method objects. For a complete
+        ///reference of the payment method object, refer
+        ///to the [Get payment method endpoint](get-method)
+        ///documentation.
+        pub methods: ::std::vec::Vec<EntityMethod>,
+    }
+
+    impl ::std::convert::From<&ListMethodsResponseEmbedded> for ListMethodsResponseEmbedded {
+        fn from(value: &ListMethodsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListMethodsResponseLinks`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "documentation",
+    ///    "self"
+    ///  ],
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListMethodsResponseLinks {
+        pub documentation: Url,
+        #[serde(rename = "self")]
+        pub self_: Url,
+    }
+
+    impl ::std::convert::From<&ListMethodsResponseLinks> for ListMethodsResponseLinks {
+        fn from(value: &ListMethodsResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListPaymentLinksResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "payment_links": {
+    ///          "description": "An array of payment link objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/payment-link-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPaymentLinksResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListPaymentLinksResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListPaymentLinksResponse> for ListPaymentLinksResponse {
+        fn from(value: &ListPaymentLinksResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListPaymentLinksResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "payment_links": {
+    ///      "description": "An array of payment link objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/payment-link-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPaymentLinksResponseEmbedded {
+        ///An array of payment link objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub payment_links: ::std::vec::Vec<PaymentLinkResponse>,
+    }
+
+    impl ::std::convert::From<&ListPaymentLinksResponseEmbedded> for ListPaymentLinksResponseEmbedded {
+        fn from(value: &ListPaymentLinksResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListPaymentLinksResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                payment_links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListPaymentsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "payments": {
+    ///          "description": "An array of payment objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/payment-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPaymentsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListPaymentsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListPaymentsResponse> for ListPaymentsResponse {
+        fn from(value: &ListPaymentsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListPaymentsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "payments": {
+    ///      "description": "An array of payment objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/payment-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPaymentsResponseEmbedded {
+        ///An array of payment objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub payments: ::std::vec::Vec<PaymentResponse>,
+    }
+
+    impl ::std::convert::From<&ListPaymentsResponseEmbedded> for ListPaymentsResponseEmbedded {
+        fn from(value: &ListPaymentsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListPaymentsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                payments: Default::default(),
+            }
+        }
+    }
+
     ///`ListPaymentsSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -35374,6 +38521,760 @@ pub mod types {
             value: ::std::string::String,
         ) -> ::std::result::Result<Self, self::error::ConversionError> {
             value.parse()
+        }
+    }
+
+    ///`ListPermissionsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "permissions": {
+    ///          "description": "An array of permission objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-permission"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "description": "An object with several relevant URLs. Every URL
+    /// object will contain an `href` and a `type` field.",
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "documentation": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        },
+    ///        "self": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        }
+    ///      }
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPermissionsResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListPermissionsResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListPermissionsResponseLinks>,
+    }
+
+    impl ::std::convert::From<&ListPermissionsResponse> for ListPermissionsResponse {
+        fn from(value: &ListPermissionsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListPermissionsResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListPermissionsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "permissions": {
+    ///      "description": "An array of permission objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-permission"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPermissionsResponseEmbedded {
+        ///An array of permission objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub permissions: ::std::vec::Vec<EntityPermission>,
+    }
+
+    impl ::std::convert::From<&ListPermissionsResponseEmbedded> for ListPermissionsResponseEmbedded {
+        fn from(value: &ListPermissionsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListPermissionsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                permissions: Default::default(),
+            }
+        }
+    }
+
+    ///An object with several relevant URLs. Every URL object will contain an
+    /// `href` and a `type` field.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "An object with several relevant URLs. Every URL object
+    /// will contain an `href` and a `type` field.",
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListPermissionsResponseLinks {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<Url>,
+        #[serde(
+            rename = "self",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub self_: ::std::option::Option<Url>,
+    }
+
+    impl ::std::convert::From<&ListPermissionsResponseLinks> for ListPermissionsResponseLinks {
+        fn from(value: &ListPermissionsResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListPermissionsResponseLinks {
+        fn default() -> Self {
+            Self {
+                documentation: Default::default(),
+                self_: Default::default(),
+            }
+        }
+    }
+
+    ///`ListProfilesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "profiles": {
+    ///          "description": "An array of profile objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-profile-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListProfilesResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListProfilesResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListProfilesResponse> for ListProfilesResponse {
+        fn from(value: &ListProfilesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListProfilesResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListProfilesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "profiles": {
+    ///      "description": "An array of profile objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-profile-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListProfilesResponseEmbedded {
+        ///An array of profile objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub profiles: ::std::vec::Vec<EntityProfileResponse>,
+    }
+
+    impl ::std::convert::From<&ListProfilesResponseEmbedded> for ListProfilesResponseEmbedded {
+        fn from(value: &ListProfilesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListProfilesResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                profiles: Default::default(),
+            }
+        }
+    }
+
+    ///`ListRefundsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "refunds"
+    ///      ],
+    ///      "properties": {
+    ///        "refunds": {
+    ///          "description": "An array of refund objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-refund-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListRefundsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListRefundsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListRefundsResponse> for ListRefundsResponse {
+        fn from(value: &ListRefundsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListRefundsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "refunds"
+    ///  ],
+    ///  "properties": {
+    ///    "refunds": {
+    ///      "description": "An array of refund objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-refund-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListRefundsResponseEmbedded {
+        ///An array of refund objects.
+        pub refunds: ::std::vec::Vec<EntityRefundResponse>,
+    }
+
+    impl ::std::convert::From<&ListRefundsResponseEmbedded> for ListRefundsResponseEmbedded {
+        fn from(value: &ListRefundsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSalesInvoicesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "sales_invoices": {
+    ///          "description": "An array of sales invoice objects. For a
+    /// complete reference of the sales invoice object, refer to\nthe [Get sales
+    /// invoice endpoint](get-sales-invoice) documentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-sales-invoice-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSalesInvoicesResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListSalesInvoicesResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListSalesInvoicesResponse> for ListSalesInvoicesResponse {
+        fn from(value: &ListSalesInvoicesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSalesInvoicesResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListSalesInvoicesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "sales_invoices": {
+    ///      "description": "An array of sales invoice objects. For a complete
+    /// reference of the sales invoice object, refer to\nthe [Get sales invoice
+    /// endpoint](get-sales-invoice) documentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-sales-invoice-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSalesInvoicesResponseEmbedded {
+        ///An array of sales invoice objects. For a complete reference of the
+        /// sales invoice object, refer to the [Get sales invoice
+        /// endpoint](get-sales-invoice) documentation.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub sales_invoices: ::std::vec::Vec<EntitySalesInvoiceResponse>,
+    }
+
+    impl ::std::convert::From<&ListSalesInvoicesResponseEmbedded>
+        for ListSalesInvoicesResponseEmbedded
+    {
+        fn from(value: &ListSalesInvoicesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSalesInvoicesResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                sales_invoices: Default::default(),
+            }
+        }
+    }
+
+    ///`ListSettlementCapturesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "captures"
+    ///      ],
+    ///      "properties": {
+    ///        "captures": {
+    ///          "description": "An array of capture objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/capture-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementCapturesResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListSettlementCapturesResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListSettlementCapturesResponse> for ListSettlementCapturesResponse {
+        fn from(value: &ListSettlementCapturesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSettlementCapturesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "captures"
+    ///  ],
+    ///  "properties": {
+    ///    "captures": {
+    ///      "description": "An array of capture objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/capture-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementCapturesResponseEmbedded {
+        ///An array of capture objects.
+        pub captures: ::std::vec::Vec<CaptureResponse>,
+    }
+
+    impl ::std::convert::From<&ListSettlementCapturesResponseEmbedded>
+        for ListSettlementCapturesResponseEmbedded
+    {
+        fn from(value: &ListSettlementCapturesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSettlementChargebacksResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "chargebacks": {
+    ///          "description": "A list of chargeback objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-chargeback"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementChargebacksResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<ListSettlementChargebacksResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<ListLinks>,
+    }
+
+    impl ::std::convert::From<&ListSettlementChargebacksResponse>
+        for ListSettlementChargebacksResponse
+    {
+        fn from(value: &ListSettlementChargebacksResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSettlementChargebacksResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`ListSettlementChargebacksResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "chargebacks": {
+    ///      "description": "A list of chargeback objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-chargeback"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementChargebacksResponseEmbedded {
+        ///A list of chargeback objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub chargebacks: ::std::vec::Vec<EntityChargeback>,
+    }
+
+    impl ::std::convert::From<&ListSettlementChargebacksResponseEmbedded>
+        for ListSettlementChargebacksResponseEmbedded
+    {
+        fn from(value: &ListSettlementChargebacksResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSettlementChargebacksResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                chargebacks: Default::default(),
+            }
+        }
+    }
+
+    ///`ListSettlementPaymentsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "payments": {
+    ///          "description": "An array of payment objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/payment-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementPaymentsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListSettlementPaymentsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListSettlementPaymentsResponse> for ListSettlementPaymentsResponse {
+        fn from(value: &ListSettlementPaymentsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSettlementPaymentsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "payments": {
+    ///      "description": "An array of payment objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/payment-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementPaymentsResponseEmbedded {
+        ///An array of payment objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub payments: ::std::vec::Vec<PaymentResponse>,
+    }
+
+    impl ::std::convert::From<&ListSettlementPaymentsResponseEmbedded>
+        for ListSettlementPaymentsResponseEmbedded
+    {
+        fn from(value: &ListSettlementPaymentsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSettlementPaymentsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                payments: Default::default(),
+            }
         }
     }
 
@@ -35464,6 +39365,280 @@ pub mod types {
         }
     }
 
+    ///`ListSettlementRefundsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "refunds"
+    ///      ],
+    ///      "properties": {
+    ///        "refunds": {
+    ///          "description": "An array of refund objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-refund-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementRefundsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListSettlementRefundsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListSettlementRefundsResponse> for ListSettlementRefundsResponse {
+        fn from(value: &ListSettlementRefundsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSettlementRefundsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "refunds"
+    ///  ],
+    ///  "properties": {
+    ///    "refunds": {
+    ///      "description": "An array of refund objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-refund-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementRefundsResponseEmbedded {
+        ///An array of refund objects.
+        pub refunds: ::std::vec::Vec<EntityRefundResponse>,
+    }
+
+    impl ::std::convert::From<&ListSettlementRefundsResponseEmbedded>
+        for ListSettlementRefundsResponseEmbedded
+    {
+        fn from(value: &ListSettlementRefundsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSettlementsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "settlements"
+    ///      ],
+    ///      "properties": {
+    ///        "settlements": {
+    ///          "description": "An array of settlement objects. For a complete
+    /// reference\nof the settlement object, refer to the [Get settlement
+    /// endpoint](get-settlement) documentation.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-settlement"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListSettlementsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListSettlementsResponse> for ListSettlementsResponse {
+        fn from(value: &ListSettlementsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSettlementsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "settlements"
+    ///  ],
+    ///  "properties": {
+    ///    "settlements": {
+    ///      "description": "An array of settlement objects. For a complete
+    /// reference\nof the settlement object, refer to the [Get settlement
+    /// endpoint](get-settlement) documentation.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-settlement"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSettlementsResponseEmbedded {
+        ///An array of settlement objects. For a complete reference
+        ///of the settlement object, refer to the [Get settlement
+        /// endpoint](get-settlement) documentation.
+        pub settlements: ::std::vec::Vec<EntitySettlement>,
+    }
+
+    impl ::std::convert::From<&ListSettlementsResponseEmbedded> for ListSettlementsResponseEmbedded {
+        fn from(value: &ListSettlementsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSubscriptionPaymentsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "payments": {
+    ///          "description": "An array of payment objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/payment-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSubscriptionPaymentsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListSubscriptionPaymentsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListSubscriptionPaymentsResponse> for ListSubscriptionPaymentsResponse {
+        fn from(value: &ListSubscriptionPaymentsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSubscriptionPaymentsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "payments": {
+    ///      "description": "An array of payment objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/payment-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSubscriptionPaymentsResponseEmbedded {
+        ///An array of payment objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub payments: ::std::vec::Vec<PaymentResponse>,
+    }
+
+    impl ::std::convert::From<&ListSubscriptionPaymentsResponseEmbedded>
+        for ListSubscriptionPaymentsResponseEmbedded
+    {
+        fn from(value: &ListSubscriptionPaymentsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSubscriptionPaymentsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                payments: Default::default(),
+            }
+        }
+    }
+
     ///`ListSubscriptionPaymentsSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -35548,6 +39723,98 @@ pub mod types {
             value: ::std::string::String,
         ) -> ::std::result::Result<Self, self::error::ConversionError> {
             value.parse()
+        }
+    }
+
+    ///`ListSubscriptionsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "subscriptions": {
+    ///          "description": "An array of subscription objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/subscription-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSubscriptionsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListSubscriptionsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListSubscriptionsResponse> for ListSubscriptionsResponse {
+        fn from(value: &ListSubscriptionsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListSubscriptionsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "subscriptions": {
+    ///      "description": "An array of subscription objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/subscription-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListSubscriptionsResponseEmbedded {
+        ///An array of subscription objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub subscriptions: ::std::vec::Vec<SubscriptionResponse>,
+    }
+
+    impl ::std::convert::From<&ListSubscriptionsResponseEmbedded>
+        for ListSubscriptionsResponseEmbedded
+    {
+        fn from(value: &ListSubscriptionsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListSubscriptionsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                subscriptions: Default::default(),
+            }
         }
     }
 
@@ -35638,6 +39905,96 @@ pub mod types {
         }
     }
 
+    ///`ListTerminalsResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "terminals": {
+    ///          "description": "An array of terminal objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-terminal"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListTerminalsResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListTerminalsResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListTerminalsResponse> for ListTerminalsResponse {
+        fn from(value: &ListTerminalsResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListTerminalsResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "terminals": {
+    ///      "description": "An array of terminal objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-terminal"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListTerminalsResponseEmbedded {
+        ///An array of terminal objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub terminals: ::std::vec::Vec<EntityTerminal>,
+    }
+
+    impl ::std::convert::From<&ListTerminalsResponseEmbedded> for ListTerminalsResponseEmbedded {
+        fn from(value: &ListTerminalsResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for ListTerminalsResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                terminals: Default::default(),
+            }
+        }
+    }
+
     ///`ListTerminalsSort`
     ///
     /// <details><summary>JSON schema</summary>
@@ -35722,6 +40079,93 @@ pub mod types {
             value: ::std::string::String,
         ) -> ::std::result::Result<Self, self::error::ConversionError> {
             value.parse()
+        }
+    }
+
+    ///`ListWebhooksResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "_embedded",
+    ///    "_links",
+    ///    "count"
+    ///  ],
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "required": [
+    ///        "webhooks"
+    ///      ],
+    ///      "properties": {
+    ///        "webhooks": {
+    ///          "description": "A list of webhooks.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/entity-webhook"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "$ref": "#/components/schemas/list-links"
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListWebhooksResponse {
+        pub count: ListCount,
+        #[serde(rename = "_embedded")]
+        pub embedded: ListWebhooksResponseEmbedded,
+        #[serde(rename = "_links")]
+        pub links: ListLinks,
+    }
+
+    impl ::std::convert::From<&ListWebhooksResponse> for ListWebhooksResponse {
+        fn from(value: &ListWebhooksResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    ///`ListWebhooksResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "required": [
+    ///    "webhooks"
+    ///  ],
+    ///  "properties": {
+    ///    "webhooks": {
+    ///      "description": "A list of webhooks.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/entity-webhook"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct ListWebhooksResponseEmbedded {
+        ///A list of webhooks.
+        pub webhooks: ::std::vec::Vec<EntityWebhook>,
+    }
+
+    impl ::std::convert::From<&ListWebhooksResponseEmbedded> for ListWebhooksResponseEmbedded {
+        fn from(value: &ListWebhooksResponseEmbedded) -> Self {
+            value.clone()
         }
     }
 
@@ -43578,6 +48022,170 @@ pub mod types {
     impl ::std::fmt::Display for PaymentLinkToken {
         fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
             self.0.fmt(f)
+        }
+    }
+
+    ///`PaymentListRoutesResponse`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "_embedded": {
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "routes": {
+    ///          "description": "An array of route objects.",
+    ///          "type": "array",
+    ///          "items": {
+    ///            "$ref": "#/components/schemas/route-get-response"
+    ///          }
+    ///        }
+    ///      }
+    ///    },
+    ///    "_links": {
+    ///      "description": "Links to help navigate through the lists of items.
+    /// Every URL object will contain an `href` and a `type` field.",
+    ///      "type": "object",
+    ///      "properties": {
+    ///        "documentation": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        },
+    ///        "self": {
+    ///          "$ref": "#/components/schemas/url"
+    ///        }
+    ///      }
+    ///    },
+    ///    "count": {
+    ///      "$ref": "#/components/schemas/list-count"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct PaymentListRoutesResponse {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub count: ::std::option::Option<ListCount>,
+        #[serde(
+            rename = "_embedded",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub embedded: ::std::option::Option<PaymentListRoutesResponseEmbedded>,
+        #[serde(
+            rename = "_links",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub links: ::std::option::Option<PaymentListRoutesResponseLinks>,
+    }
+
+    impl ::std::convert::From<&PaymentListRoutesResponse> for PaymentListRoutesResponse {
+        fn from(value: &PaymentListRoutesResponse) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for PaymentListRoutesResponse {
+        fn default() -> Self {
+            Self {
+                count: Default::default(),
+                embedded: Default::default(),
+                links: Default::default(),
+            }
+        }
+    }
+
+    ///`PaymentListRoutesResponseEmbedded`
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "routes": {
+    ///      "description": "An array of route objects.",
+    ///      "type": "array",
+    ///      "items": {
+    ///        "$ref": "#/components/schemas/route-get-response"
+    ///      }
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct PaymentListRoutesResponseEmbedded {
+        ///An array of route objects.
+        #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
+        pub routes: ::std::vec::Vec<RouteGetResponse>,
+    }
+
+    impl ::std::convert::From<&PaymentListRoutesResponseEmbedded>
+        for PaymentListRoutesResponseEmbedded
+    {
+        fn from(value: &PaymentListRoutesResponseEmbedded) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for PaymentListRoutesResponseEmbedded {
+        fn default() -> Self {
+            Self {
+                routes: Default::default(),
+            }
+        }
+    }
+
+    ///Links to help navigate through the lists of items. Every URL object will
+    /// contain an `href` and a `type` field.
+    ///
+    /// <details><summary>JSON schema</summary>
+    ///
+    /// ```json
+    ///{
+    ///  "description": "Links to help navigate through the lists of items.
+    /// Every URL object will contain an `href` and a `type` field.",
+    ///  "type": "object",
+    ///  "properties": {
+    ///    "documentation": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    },
+    ///    "self": {
+    ///      "$ref": "#/components/schemas/url"
+    ///    }
+    ///  }
+    ///}
+    /// ```
+    /// </details>
+    #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+    pub struct PaymentListRoutesResponseLinks {
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<Url>,
+        #[serde(
+            rename = "self",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
+        pub self_: ::std::option::Option<Url>,
+    }
+
+    impl ::std::convert::From<&PaymentListRoutesResponseLinks> for PaymentListRoutesResponseLinks {
+        fn from(value: &PaymentListRoutesResponseLinks) -> Self {
+            value.clone()
+        }
+    }
+
+    impl ::std::default::Default for PaymentListRoutesResponseLinks {
+        fn default() -> Self {
+            Self {
+                documentation: Default::default(),
+                self_: Default::default(),
+            }
         }
     }
 
@@ -58922,7 +63530,7 @@ pub mod types {
     ///      "description": "The content type of the page or endpoint the URL
     /// points to.",
     ///      "examples": [
-    ///        "application/hal+json"
+    ///        "application/json"
     ///      ],
     ///      "type": "string"
     ///    }
@@ -58970,7 +63578,7 @@ pub mod types {
     ///      "description": "The content type of the page or endpoint the URL
     /// points to.",
     ///      "examples": [
-    ///        "application/hal+json"
+    ///        "application/json"
     ///      ],
     ///      "type": "string"
     ///    }
@@ -59028,7 +63636,7 @@ pub mod types {
     ///      "description": "The content type of the page or endpoint the URL
     /// points to.",
     ///      "examples": [
-    ///        "application/hal+json"
+    ///        "application/json"
     ///      ],
     ///      "type": "string"
     ///    }
@@ -59906,7 +64514,7 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListBalancesResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/balances", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -59921,6 +64529,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("currency", &currency))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -59935,9 +64547,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -59985,7 +64601,7 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityBalance>, Error<types::ErrorResponse>> {
         let url = format!("{}/balances/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60000,6 +64616,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -60011,8 +64631,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60033,7 +64655,7 @@ impl Client {
     pub async fn get_primary_balance<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::EntityBalance>, Error<()>> {
         let url = format!("{}/balances/primary", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60045,7 +64667,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_primary_balance",
         };
@@ -60054,7 +64684,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60110,7 +64740,7 @@ impl Client {
         testmode: Option<bool>,
         until: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityBalanceReport>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/balances/{}/report",
             self.baseurl,
@@ -60129,6 +64759,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("grouping", &grouping))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
@@ -60143,9 +64777,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60188,7 +64826,8 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListBalanceTransactionsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/balances/{}/transactions",
             self.baseurl,
@@ -60207,6 +64846,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
@@ -60220,10 +64863,16 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            429u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            429u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60261,7 +64910,7 @@ impl Client {
         month: Option<&'a str>,
         year: Option<&'a str>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSettlementsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/settlements", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60276,6 +64925,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new(
                 "balanceId",
                 &balance_id,
@@ -60298,9 +64951,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60334,7 +64991,7 @@ impl Client {
         &'a self,
         id: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntitySettlement>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/settlements/{}",
             self.baseurl,
@@ -60350,7 +65007,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_settlement",
         };
@@ -60359,8 +65024,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60385,7 +65052,7 @@ impl Client {
     pub async fn get_open_settlement<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::EntitySettlement>, Error<()>> {
         let url = format!("{}/settlements/open", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60397,7 +65064,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_open_settlement",
         };
@@ -60406,7 +65081,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60431,7 +65106,7 @@ impl Client {
     pub async fn get_next_settlement<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::EntitySettlement>, Error<()>> {
         let url = format!("{}/settlements/next", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60443,7 +65118,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_next_settlement",
         };
@@ -60452,7 +65135,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60505,7 +65188,8 @@ impl Client {
         sort: Option<types::ListSettlementPaymentsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSettlementPaymentsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/settlements/{}/payments",
             self.baseurl,
@@ -60524,6 +65208,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new(
@@ -60542,8 +65230,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60584,7 +65274,8 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSettlementCapturesResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/settlements/{}/captures",
             self.baseurl,
@@ -60603,6 +65294,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -60617,9 +65312,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60660,7 +65359,8 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSettlementRefundsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/settlements/{}/refunds",
             self.baseurl,
@@ -60679,6 +65379,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -60693,9 +65397,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60736,7 +65444,8 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSettlementChargebacksResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/settlements/{}/chargebacks",
             self.baseurl,
@@ -60755,6 +65464,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -60769,9 +65482,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60809,7 +65526,7 @@ impl Client {
         sort: Option<types::ListInvoicesSort>,
         year: Option<&'a str>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListInvoicesResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/invoices", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60824,6 +65541,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("month", &month))
@@ -60840,9 +65561,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60866,7 +65591,7 @@ impl Client {
         &'a self,
         id: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityInvoice>, Error<types::ErrorResponse>> {
         let url = format!("{}/invoices/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60878,7 +65603,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_invoice",
         };
@@ -60887,8 +65620,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60908,7 +65643,7 @@ impl Client {
     pub async fn list_permissions<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListPermissionsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/permissions", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -60920,7 +65655,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "list_permissions",
         };
@@ -60929,8 +65672,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -60959,7 +65704,7 @@ impl Client {
         permission_id: &'a types::PermissionToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityPermission>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/permissions/{}",
             self.baseurl,
@@ -60978,6 +65723,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -60989,8 +65738,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61026,7 +65777,7 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityOrganization>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/organizations/{}",
             self.baseurl,
@@ -61045,6 +65796,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -61056,8 +65811,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61078,7 +65835,7 @@ impl Client {
     pub async fn get_current_organization<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::EntityOrganization>, Error<()>> {
         let url = format!("{}/organizations/me", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61090,7 +65847,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_current_organization",
         };
@@ -61099,7 +65864,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61117,7 +65882,7 @@ impl Client {
     pub async fn get_partner_status<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::GetPartnerStatusResponse>, Error<()>> {
         let url = format!("{}/organizations/me/partner", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61129,7 +65894,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_partner_status",
         };
@@ -61138,7 +65911,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61163,7 +65936,7 @@ impl Client {
         from: Option<&'a str>,
         limit: Option<::std::num::NonZeroU64>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListProfilesResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/profiles", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61178,6 +65951,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .headers(header_map)
@@ -61190,8 +65967,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61214,7 +65993,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntityProfile,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityProfileResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/profiles", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61229,6 +66008,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -61240,8 +66023,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61270,7 +66055,7 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityProfileResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/profiles/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61285,6 +66070,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -61296,9 +66085,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            410u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            410u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61319,7 +66112,7 @@ impl Client {
         &'a self,
         id: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!("{}/profiles/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61331,7 +66124,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.delete(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "delete_profile",
         };
@@ -61340,9 +66141,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            410u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            410u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61368,7 +66173,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::UpdateProfileBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityProfileResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/profiles/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61383,6 +66188,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -61394,10 +66203,16 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            410u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            410u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61418,7 +66233,7 @@ impl Client {
     pub async fn get_current_profile<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::EntityProfileResponse>, Error<()>> {
         let url = format!("{}/profiles/me", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61430,7 +66245,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_current_profile",
         };
@@ -61439,7 +66262,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61457,7 +66280,7 @@ impl Client {
     pub async fn get_onboarding_status<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::EntityOnboardingStatus>, Error<()>> {
         let url = format!("{}/onboarding/me", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61469,7 +66292,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "get_onboarding_status",
         };
@@ -61478,7 +66309,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61504,7 +66335,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::SubmitOnboardingDataBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<()>> {
         let url = format!("{}/onboarding/me", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61519,6 +66350,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -61530,7 +66365,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
+            204u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61564,7 +66399,7 @@ impl Client {
     pub async fn list_capabilities<'a>(
         &'a self,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<()>> {
+    ) -> Result<ResponseValue<types::ListCapabilitiesResponse>, Error<()>> {
         let url = format!("{}/capabilities", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61576,7 +66411,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.get(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "list_capabilities",
         };
@@ -61585,7 +66428,7 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
+            200u16 => ResponseValue::from_response(response).await,
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61614,7 +66457,7 @@ impl Client {
         from: Option<&'a str>,
         limit: Option<::std::num::NonZeroU64>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListClientsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/clients", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61629,6 +66472,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -61642,9 +66489,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61668,7 +66519,7 @@ impl Client {
         id: &'a str,
         embed: Option<&'a str>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::GetClientResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/clients/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61683,6 +66534,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .headers(header_map)
             .build()?;
@@ -61694,8 +66549,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61771,7 +66628,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntityClientLink,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityClientLinkResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/client-links", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61786,6 +66643,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -61797,9 +66658,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61840,7 +66705,7 @@ impl Client {
         sort: Option<types::ListWebhooksSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListWebhooksResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/webhooks", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61855,6 +66720,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new(
                 "eventTypes",
                 &event_types,
@@ -61873,8 +66742,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61894,7 +66765,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::CreateWebhookBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::CreateWebhook>, Error<types::ErrorResponse>> {
         let url = format!("{}/webhooks", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61909,6 +66780,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -61920,8 +66795,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -61950,7 +66827,7 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityWebhook>, Error<types::ErrorResponse>> {
         let url = format!("{}/webhooks/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -61965,6 +66842,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -61976,9 +66857,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62000,7 +66885,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::DeleteWebhookBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!("{}/webhooks/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62015,6 +66900,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62026,9 +66915,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62051,7 +66944,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::UpdateWebhookBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityWebhook>, Error<types::ErrorResponse>> {
         let url = format!("{}/webhooks/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62066,6 +66959,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62077,9 +66974,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62102,7 +67003,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::TestWebhookBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/webhooks/{}/ping",
             self.baseurl,
@@ -62121,6 +67022,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62132,9 +67037,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            202u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            202u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62163,7 +67072,7 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityWebhookEvent>, Error<types::ErrorResponse>> {
         let url = format!("{}/events/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62178,6 +67087,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -62189,8 +67102,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62230,7 +67145,10 @@ impl Client {
         sort: Option<types::ListConnectBalanceTransfersSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<
+        ResponseValue<types::ListConnectBalanceTransfersResponse>,
+        Error<types::ErrorResponse>,
+    > {
         let url = format!("{}/connect/balance-transfers", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62245,6 +67163,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("sort", &sort))
@@ -62259,8 +67181,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62285,7 +67209,8 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntityBalanceTransfer,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityBalanceTransferResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!("{}/connect/balance-transfers", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62300,6 +67225,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62311,8 +67240,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62341,7 +67272,8 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityBalanceTransferResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/connect/balance-transfers/{}",
             self.baseurl,
@@ -62360,6 +67292,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -62371,8 +67307,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62418,7 +67356,7 @@ impl Client {
         sort: Option<types::ListPaymentsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListPaymentsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/payments", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62433,6 +67371,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new(
@@ -62451,8 +67393,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62486,7 +67430,7 @@ impl Client {
         include: Option<&'a str>,
         idempotency_key: Option<&'a str>,
         body: &'a types::PaymentRequest,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/payments", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62501,6 +67445,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .query(&progenitor_client::QueryParam::new("include", &include))
             .headers(header_map)
@@ -62513,9 +67461,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            503u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            503u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62550,7 +67502,7 @@ impl Client {
         include: Option<&'a str>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}",
             self.baseurl,
@@ -62569,6 +67521,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("include", &include))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
@@ -62582,8 +67538,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62611,7 +67569,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::CancelPaymentBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}",
             self.baseurl,
@@ -62630,6 +67588,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62641,9 +67603,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62666,7 +67632,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::UpdatePaymentBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}",
             self.baseurl,
@@ -62685,6 +67651,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62696,9 +67666,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62729,7 +67703,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::ReleaseAuthorizationBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/release-authorization",
             self.baseurl,
@@ -62748,6 +67722,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -62759,9 +67737,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            202u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            202u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62856,7 +67838,7 @@ impl Client {
         sequence_type: Option<types::SequenceType>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListMethodsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/methods", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62871,6 +67853,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("amount", &amount))
             .query(&progenitor_client::QueryParam::new(
                 "billingCountry",
@@ -62906,8 +67892,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -62965,7 +67953,7 @@ impl Client {
         sequence_type: Option<types::SequenceType>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListAllMethodsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/methods/all", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -62980,6 +67968,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("amount", &amount))
             .query(&progenitor_client::QueryParam::new("include", &include))
             .query(&progenitor_client::QueryParam::new("locale", &locale))
@@ -63002,8 +67994,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63071,7 +68065,7 @@ impl Client {
         sequence_type: Option<types::SequenceType>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityMethod>, Error<types::ErrorResponse>> {
         let url = format!("{}/methods/{}", self.baseurl, encode_path(&id.to_string()),);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -63086,6 +68080,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("currency", &currency))
             .query(&progenitor_client::QueryParam::new("include", &include))
             .query(&progenitor_client::QueryParam::new("locale", &locale))
@@ -63108,9 +68106,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63144,7 +68146,7 @@ impl Client {
         profile_id: &'a types::EnableMethodProfileId,
         id: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityMethod>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/profiles/{}/methods/{}",
             self.baseurl,
@@ -63161,7 +68163,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.post(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "enable_method",
         };
@@ -63170,8 +68180,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63196,7 +68208,7 @@ impl Client {
         profile_id: &'a types::DisableMethodProfileId,
         id: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/profiles/{}/methods/{}",
             self.baseurl,
@@ -63213,7 +68225,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.delete(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "disable_method",
         };
@@ -63222,8 +68242,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63256,7 +68278,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::EnableMethodIssuerBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EnableMethodIssuerResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/profiles/{}/methods/{}/issuers/{}",
             self.baseurl,
@@ -63277,6 +68299,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -63288,8 +68314,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63320,7 +68348,7 @@ impl Client {
         method_id: &'a str,
         id: &'a str,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/profiles/{}/methods/{}/issuers/{}",
             self.baseurl,
@@ -63338,7 +68366,15 @@ impl Client {
         }
 
         #[allow(unused_mut)]
-        let mut request = self.client.delete(url).headers(header_map).build()?;
+        let mut request = self
+            .client
+            .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
+            .headers(header_map)
+            .build()?;
         let info = OperationInfo {
             operation_id: "disable_method_issuer",
         };
@@ -63347,8 +68383,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63388,7 +68426,7 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListRefundsResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/refunds",
             self.baseurl,
@@ -63407,6 +68445,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -63421,9 +68463,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63446,7 +68492,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::RefundRequest,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityRefundResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/refunds",
             self.baseurl,
@@ -63465,6 +68511,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -63476,10 +68526,16 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            409u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            409u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63514,7 +68570,7 @@ impl Client {
         embed: Option<&'a str>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityRefundResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/refunds/{}",
             self.baseurl,
@@ -63534,6 +68590,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
@@ -63546,8 +68606,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63583,7 +68645,7 @@ impl Client {
         refund_id: &'a types::RefundToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/refunds/{}",
             self.baseurl,
@@ -63603,6 +68665,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -63614,8 +68680,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63665,7 +68733,7 @@ impl Client {
         sort: Option<types::ListAllRefundsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListAllRefundsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/refunds", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -63680,6 +68748,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -63699,8 +68771,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63740,7 +68814,7 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListChargebacksResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/chargebacks",
             self.baseurl,
@@ -63759,6 +68833,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -63773,9 +68851,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63811,7 +68893,7 @@ impl Client {
         embed: Option<&'a str>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityChargeback>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/chargebacks/{}",
             self.baseurl,
@@ -63831,6 +68913,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
@@ -63843,8 +68929,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63896,7 +68984,7 @@ impl Client {
         sort: Option<types::ListAllChargebacksSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListAllChargebacksResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/chargebacks", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -63911,6 +68999,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -63930,9 +69022,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -63972,7 +69068,7 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListCapturesResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/captures",
             self.baseurl,
@@ -63991,6 +69087,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
@@ -64005,9 +69105,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64036,7 +69140,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntityCapture,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::CaptureResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/captures",
             self.baseurl,
@@ -64055,6 +69159,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64066,9 +69174,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64103,7 +69215,7 @@ impl Client {
         embed: Option<&'a str>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::CaptureResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/captures/{}",
             self.baseurl,
@@ -64123,6 +69235,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("embed", &embed))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
@@ -64135,8 +69251,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64176,7 +69294,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::RequestApplePayPaymentSessionBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntitySession>, Error<types::ErrorResponse>> {
         let url = format!("{}/wallets/applepay/sessions", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -64191,6 +69309,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64202,8 +69324,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64237,7 +69361,7 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListPaymentLinksResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/payment-links", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -64252,6 +69376,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
@@ -64265,8 +69393,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64290,7 +69420,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::CreatePaymentLinkBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentLinkResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/payment-links", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -64305,6 +69435,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64316,9 +69450,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64346,7 +69484,7 @@ impl Client {
         payment_link_id: &'a types::PaymentLinkToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentLinkResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payment-links/{}",
             self.baseurl,
@@ -64365,6 +69503,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -64376,8 +69518,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64408,7 +69552,7 @@ impl Client {
         payment_link_id: &'a types::PaymentLinkToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::DeletePaymentLinkBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payment-links/{}",
             self.baseurl,
@@ -64427,6 +69571,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64438,9 +69586,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64461,7 +69613,7 @@ impl Client {
         payment_link_id: &'a types::PaymentLinkToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::UpdatePaymentLinkBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentLinkResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payment-links/{}",
             self.baseurl,
@@ -64480,6 +69632,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64491,9 +69647,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64533,7 +69693,8 @@ impl Client {
         sort: Option<types::GetPaymentLinkPaymentsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::GetPaymentLinkPaymentsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/payment-links/{}/payments",
             self.baseurl,
@@ -64552,6 +69713,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("sort", &sort))
@@ -64566,8 +69731,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64605,7 +69772,7 @@ impl Client {
         sort: Option<types::ListTerminalsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListTerminalsResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/terminals", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -64620,6 +69787,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("sort", &sort))
@@ -64634,8 +69805,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64663,7 +69836,7 @@ impl Client {
         terminal_id: &'a types::TerminalToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntityTerminal>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/terminals/{}",
             self.baseurl,
@@ -64682,6 +69855,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -64693,8 +69870,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64722,7 +69901,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentListRoutesResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/routes",
             self.baseurl,
@@ -64741,6 +69920,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -64752,8 +69935,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64775,7 +69960,7 @@ impl Client {
         payment_id: &'a types::PaymentToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::RouteCreateRequest,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::RouteCreateResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/payments/{}/routes",
             self.baseurl,
@@ -64794,6 +69979,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64805,8 +69994,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64844,7 +70035,7 @@ impl Client {
         sort: Option<types::ListCustomersSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListCustomersResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/customers", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -64859,6 +70050,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("sort", &sort))
@@ -64873,9 +70068,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64898,7 +70097,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntityCustomer,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::CustomerResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/customers", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -64913,6 +70112,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -64924,8 +70127,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -64956,7 +70161,7 @@ impl Client {
         include: Option<&'a str>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::GetCustomerResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}",
             self.baseurl,
@@ -64975,6 +70180,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("include", &include))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
@@ -64987,8 +70196,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65010,7 +70221,7 @@ impl Client {
         customer_id: &'a types::CustomerToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::DeleteCustomerBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}",
             self.baseurl,
@@ -65029,6 +70240,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65040,8 +70255,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65065,7 +70282,7 @@ impl Client {
         customer_id: &'a types::CustomerToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntityCustomer,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::CustomerResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}",
             self.baseurl,
@@ -65084,6 +70301,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65095,8 +70316,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65142,7 +70365,8 @@ impl Client {
         sort: Option<types::ListCustomerPaymentsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListCustomerPaymentsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/customers/{}/payments",
             self.baseurl,
@@ -65161,6 +70385,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new(
@@ -65179,8 +70407,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65213,7 +70443,7 @@ impl Client {
         customer_id: &'a types::CustomerToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::PaymentRequest,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::PaymentResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/payments",
             self.baseurl,
@@ -65232,6 +70462,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65243,9 +70477,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            503u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            503u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65285,7 +70523,7 @@ impl Client {
         sort: Option<types::ListMandatesSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListMandatesResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/mandates",
             self.baseurl,
@@ -65304,6 +70542,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("sort", &sort))
@@ -65318,9 +70560,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65346,7 +70592,7 @@ impl Client {
         customer_id: &'a types::CustomerToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::MandateRequest,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::MandateResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/mandates",
             self.baseurl,
@@ -65365,6 +70611,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65376,8 +70626,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65409,7 +70661,7 @@ impl Client {
         mandate_id: &'a types::MandateToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::MandateResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/mandates/{}",
             self.baseurl,
@@ -65429,6 +70681,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -65440,8 +70696,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65467,7 +70725,7 @@ impl Client {
         mandate_id: &'a types::MandateToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::RevokeMandateBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/mandates/{}",
             self.baseurl,
@@ -65487,6 +70745,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65498,8 +70760,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65539,7 +70803,7 @@ impl Client {
         sort: Option<types::ListSubscriptionsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSubscriptionsResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/subscriptions",
             self.baseurl,
@@ -65558,6 +70822,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("sort", &sort))
@@ -65572,9 +70840,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65617,7 +70889,7 @@ impl Client {
         customer_id: &'a types::CustomerToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::SubscriptionRequest,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::SubscriptionResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/subscriptions",
             self.baseurl,
@@ -65636,6 +70908,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65647,8 +70923,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65680,7 +70958,7 @@ impl Client {
         subscription_id: &'a types::SubscriptionToken,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::SubscriptionResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/subscriptions/{}",
             self.baseurl,
@@ -65700,6 +70978,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -65711,8 +70993,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65737,7 +71021,7 @@ impl Client {
         subscription_id: &'a types::SubscriptionToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::CancelSubscriptionBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::SubscriptionResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/subscriptions/{}",
             self.baseurl,
@@ -65757,6 +71041,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65768,8 +71056,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65798,7 +71088,7 @@ impl Client {
         subscription_id: &'a types::SubscriptionToken,
         idempotency_key: Option<&'a str>,
         body: &'a types::UpdateSubscriptionBody,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::SubscriptionResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/customers/{}/subscriptions/{}",
             self.baseurl,
@@ -65818,6 +71108,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -65829,8 +71123,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65874,7 +71170,8 @@ impl Client {
         profile_id: Option<&'a str>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListAllSubscriptionsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!("{}/subscriptions", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -65889,6 +71186,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new(
@@ -65906,9 +71207,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -65959,7 +71264,8 @@ impl Client {
         sort: Option<types::ListSubscriptionPaymentsSort>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSubscriptionPaymentsResponse>, Error<types::ErrorResponse>>
+    {
         let url = format!(
             "{}/customers/{}/subscriptions/{}/payments",
             self.baseurl,
@@ -65979,6 +71285,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new(
@@ -65997,8 +71307,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -66037,7 +71349,7 @@ impl Client {
         limit: Option<::std::num::NonZeroU64>,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::ListSalesInvoicesResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/sales-invoices", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -66052,6 +71364,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("from", &from))
             .query(&progenitor_client::QueryParam::new("limit", &limit))
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
@@ -66065,8 +71381,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            400u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            400u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -66091,7 +71409,7 @@ impl Client {
         &'a self,
         idempotency_key: Option<&'a str>,
         body: &'a types::EntitySalesInvoice,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntitySalesInvoiceResponse>, Error<types::ErrorResponse>> {
         let url = format!("{}/sales-invoices", self.baseurl,);
         let mut header_map = ::reqwest::header::HeaderMap::with_capacity(2usize);
         header_map.append(
@@ -66106,6 +71424,10 @@ impl Client {
         let mut request = self
             .client
             .post(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -66117,9 +71439,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            201u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            201u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -66153,7 +71479,7 @@ impl Client {
         id: &'a str,
         testmode: Option<bool>,
         idempotency_key: Option<&'a str>,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntitySalesInvoiceResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/sales-invoices/{}",
             self.baseurl,
@@ -66172,6 +71498,10 @@ impl Client {
         let mut request = self
             .client
             .get(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .query(&progenitor_client::QueryParam::new("testmode", &testmode))
             .headers(header_map)
             .build()?;
@@ -66183,8 +71513,10 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -66213,7 +71545,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::DeleteValuesSalesInvoice,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<::serde_json::Value>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/sales-invoices/{}",
             self.baseurl,
@@ -66232,6 +71564,10 @@ impl Client {
         let mut request = self
             .client
             .delete(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -66243,9 +71579,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            204u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            204u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
@@ -66275,7 +71615,7 @@ impl Client {
         id: &'a str,
         idempotency_key: Option<&'a str>,
         body: &'a types::UpdateValuesSalesInvoice,
-    ) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
+    ) -> Result<ResponseValue<types::EntitySalesInvoiceResponse>, Error<types::ErrorResponse>> {
         let url = format!(
             "{}/sales-invoices/{}",
             self.baseurl,
@@ -66294,6 +71634,10 @@ impl Client {
         let mut request = self
             .client
             .patch(url)
+            .header(
+                ::reqwest::header::ACCEPT,
+                ::reqwest::header::HeaderValue::from_static("application/json"),
+            )
             .json(&body)
             .headers(header_map)
             .build()?;
@@ -66305,9 +71649,13 @@ impl Client {
         self.post(&result, &info).await?;
         let response = result?;
         match response.status().as_u16() {
-            200u16 => Ok(ResponseValue::stream(response)),
-            404u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
-            422u16 => Err(Error::ErrorResponse(ResponseValue::stream(response))),
+            200u16 => ResponseValue::from_response(response).await,
+            404u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
+            422u16 => Err(Error::ErrorResponse(
+                ResponseValue::from_response(response).await?,
+            )),
             _ => Err(Error::UnexpectedResponse(response)),
         }
     }
