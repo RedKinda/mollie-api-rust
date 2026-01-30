@@ -35968,7 +35968,7 @@ components:
 
 
             Possible values: `... days`, `... weeks`, `... months`.
-          pattern: ^\d+ (days|weeks|months)$
+          pattern: ^\d+ (days?|weeks?|months?)$
           example: 2 days
         startDate:
           type: string
@@ -36137,7 +36137,7 @@ components:
 
 
             Possible values: `... days`, `... weeks`, `... months`.
-          pattern: ^\d+ (days|weeks|months)$
+          pattern: ^\d+ (days?|weeks?|months?)$
           example: 2 days
         startDate:
           type: string

@@ -31266,7 +31266,7 @@ pub mod types {
     ///        "2 days"
     ///      ],
     ///      "type": "string",
-    ///      "pattern": "^\\d+ (days|weeks|months)$"
+    ///      "pattern": "^\\d+ (days?|weeks?|months?)$"
     ///    },
     ///    "mandateId": {
     ///      "$ref": "#/components/schemas/mandateToken"
@@ -31581,7 +31581,7 @@ pub mod types {
     ///    "2 days"
     ///  ],
     ///  "type": "string",
-    ///  "pattern": "^\\d+ (days|weeks|months)$"
+    ///  "pattern": "^\\d+ (days?|weeks?|months?)$"
     ///}
     /// ```
     /// </details>
@@ -31612,10 +31612,10 @@ pub mod types {
         fn from_str(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
             static PATTERN: ::std::sync::LazyLock<::regress::Regex> =
                 ::std::sync::LazyLock::new(|| {
-                    ::regress::Regex::new("^\\d+ (days|weeks|months)$").unwrap()
+                    ::regress::Regex::new("^\\d+ (days?|weeks?|months?)$").unwrap()
                 });
             if PATTERN.find(value).is_none() {
-                return Err("doesn't match pattern \"^\\d+ (days|weeks|months)$\"".into());
+                return Err("doesn't match pattern \"^\\d+ (days?|weeks?|months?)$\"".into());
             }
             Ok(Self(value.to_string()))
         }
@@ -61035,7 +61035,7 @@ pub mod types {
     ///        "2 days"
     ///      ],
     ///      "type": "string",
-    ///      "pattern": "^\\d+ (days|weeks|months)$"
+    ///      "pattern": "^\\d+ (days?|weeks?|months?)$"
     ///    },
     ///    "mandateId": {
     ///      "$ref": "#/components/schemas/mandateToken"
@@ -61344,7 +61344,7 @@ pub mod types {
     ///    "2 days"
     ///  ],
     ///  "type": "string",
-    ///  "pattern": "^\\d+ (days|weeks|months)$"
+    ///  "pattern": "^\\d+ (days?|weeks?|months?)$"
     ///}
     /// ```
     /// </details>
@@ -61375,10 +61375,10 @@ pub mod types {
         fn from_str(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
             static PATTERN: ::std::sync::LazyLock<::regress::Regex> =
                 ::std::sync::LazyLock::new(|| {
-                    ::regress::Regex::new("^\\d+ (days|weeks|months)$").unwrap()
+                    ::regress::Regex::new("^\\d+ (days?|weeks?|months?)$").unwrap()
                 });
             if PATTERN.find(value).is_none() {
-                return Err("doesn't match pattern \"^\\d+ (days|weeks|months)$\"".into());
+                return Err("doesn't match pattern \"^\\d+ (days?|weeks?|months?)$\"".into());
             }
             Ok(Self(value.to_string()))
         }

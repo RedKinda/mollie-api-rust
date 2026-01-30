@@ -33711,7 +33711,7 @@ components:
             The maximum interval is one year (`12 months`, `52 weeks`, or `365 days`).
 
             Possible values: `... days`, `... weeks`, `... months`.
-          pattern: ^\d+ (days|weeks|months)$
+          pattern: ^\d+ (days?|weeks?|months?)$
           example: 2 days
         startDate:
           type: string
@@ -33893,7 +33893,7 @@ components:
             The maximum interval is one year (`12 months`, `52 weeks`, or `365 days`).
 
             Possible values: `... days`, `... weeks`, `... months`.
-          pattern: ^\d+ (days|weeks|months)$
+          pattern: ^\d+ (days?|weeks?|months?)$
           example: 2 days
         startDate:
           type: string
