@@ -31359,7 +31359,7 @@ components:
 
 
             Possible values: `... days`, `... weeks`, `... months`.
-          pattern: ^(\d+) (months|weeks|days)$
+          pattern: ^(\d+) (months?|weeks?|days?)$
           example: 12 months
         amount:
           $ref: '#/components/schemas/amount'
@@ -36208,8 +36208,6 @@ components:
             well. Be sure to verify the payment's subscription ID and its
             status.
           example: https://example.com/webhook
-        customerId:
-          $ref: '#/components/schemas/customerToken'
         mandateId:
           $ref: '#/components/schemas/mandateToken'
         createdAt:

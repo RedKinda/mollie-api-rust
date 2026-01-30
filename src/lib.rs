@@ -51875,7 +51875,7 @@ pub mod types {
     ///        "12 months"
     ///      ],
     ///      "type": "string",
-    ///      "pattern": "^(\\d+) (months|weeks|days)$"
+    ///      "pattern": "^(\\d+) (months?|weeks?|days?)$"
     ///    },
     ///    "startDate": {
     ///      "description": "The start date of the subscription if it does not
@@ -51949,7 +51949,7 @@ pub mod types {
     ///    "12 months"
     ///  ],
     ///  "type": "string",
-    ///  "pattern": "^(\\d+) (months|weeks|days)$"
+    ///  "pattern": "^(\\d+) (months?|weeks?|days?)$"
     ///}
     /// ```
     /// </details>
@@ -51980,10 +51980,10 @@ pub mod types {
         fn from_str(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
             static PATTERN: ::std::sync::LazyLock<::regress::Regex> =
                 ::std::sync::LazyLock::new(|| {
-                    ::regress::Regex::new("^(\\d+) (months|weeks|days)$").unwrap()
+                    ::regress::Regex::new("^(\\d+) (months?|weeks?|days?)$").unwrap()
                 });
             if PATTERN.find(value).is_none() {
-                return Err("doesn't match pattern \"^(\\d+) (months|weeks|days)$\"".into());
+                return Err("doesn't match pattern \"^(\\d+) (months?|weeks?|days?)$\"".into());
             }
             Ok(Self(value.to_string()))
         }
@@ -61012,9 +61012,6 @@ pub mod types {
     ///    "createdAt": {
     ///      "$ref": "#/components/schemas/created-at"
     ///    },
-    ///    "customerId": {
-    ///      "$ref": "#/components/schemas/customerToken"
-    ///    },
     ///    "description": {
     ///      "description": "The subscription's description will be used as the
     /// description of the resulting individual payments and so showing\nup on
@@ -61153,12 +61150,6 @@ pub mod types {
             skip_serializing_if = "::std::option::Option::is_none"
         )]
         pub created_at: ::std::option::Option<CreatedAt>,
-        #[serde(
-            rename = "customerId",
-            default,
-            skip_serializing_if = "::std::option::Option::is_none"
-        )]
-        pub customer_id: ::std::option::Option<CustomerToken>,
         ///The subscription's description will be used as the description of
         /// the resulting individual payments and so showing
         /// up on the bank statement of the consumer.
@@ -61262,7 +61253,6 @@ pub mod types {
                 application_fee: Default::default(),
                 canceled_at: Default::default(),
                 created_at: Default::default(),
-                customer_id: Default::default(),
                 description: Default::default(),
                 id: Default::default(),
                 interval: Default::default(),
