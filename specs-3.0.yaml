@@ -36066,7 +36066,6 @@ components:
             - self
             - profile
             - customer
-            - documentation
           properties:
             self:
               $ref: '#/components/schemas/url'

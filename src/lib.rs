@@ -31172,7 +31172,6 @@ pub mod types {
     ///      "type": "object",
     ///      "required": [
     ///        "customer",
-    ///        "documentation",
     ///        "profile",
     ///        "self"
     ///      ],
@@ -31672,7 +31671,6 @@ pub mod types {
     ///  "type": "object",
     ///  "required": [
     ///    "customer",
-    ///    "documentation",
     ///    "profile",
     ///    "self"
     ///  ],
@@ -31702,7 +31700,8 @@ pub mod types {
     #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
     pub struct EntitySubscriptionLinks {
         pub customer: UrlNullable,
-        pub documentation: Url,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub documentation: ::std::option::Option<Url>,
         #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
         pub mandate: ::std::option::Option<UrlNullable>,
         #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
