@@ -19329,10 +19329,6 @@ pub mod types {
     ///          "type": "string",
     ///          "x-methodSpecific": true
     ///        },
-    ///        "sellerProtection": {
-    ///          "$ref":
-    /// "#/components/schemas/payment-details-seller-protection"
-    ///        },
     ///        "shippingAddress": {
     ///          "description": "For wallet payment methods — such as Apple Pay
     /// and PayPal — the shipping address is often already known by the\nwallet
@@ -21058,9 +21054,6 @@ pub mod types {
     ///      "type": "string",
     ///      "x-methodSpecific": true
     ///    },
-    ///    "sellerProtection": {
-    ///      "$ref": "#/components/schemas/payment-details-seller-protection"
-    ///    },
     ///    "shippingAddress": {
     ///      "description": "For wallet payment methods — such as Apple Pay and
     /// PayPal — the shipping address is often already known by the\nwallet
@@ -21442,12 +21435,6 @@ pub mod types {
             skip_serializing_if = "::std::option::Option::is_none"
         )]
         pub remainder_method: ::std::option::Option<::std::string::String>,
-        #[serde(
-            rename = "sellerProtection",
-            default,
-            skip_serializing_if = "::std::option::Option::is_none"
-        )]
-        pub seller_protection: ::std::option::Option<PaymentDetailsSellerProtection>,
         ///For wallet payment methods — such as Apple Pay and PayPal — the
         /// shipping address is often already known by the
         /// wallet provider. In these cases the shipping address may be
@@ -21551,7 +21538,6 @@ pub mod types {
                 remainder_amount: Default::default(),
                 remainder_details: Default::default(),
                 remainder_method: Default::default(),
-                seller_protection: Default::default(),
                 shipping_address: Default::default(),
                 signature_date: Default::default(),
                 terminal_id: Default::default(),
@@ -23478,10 +23464,6 @@ pub mod types {
     ///          "type": "string",
     ///          "x-methodSpecific": true
     ///        },
-    ///        "sellerProtection": {
-    ///          "$ref":
-    /// "#/components/schemas/payment-details-seller-protection-response"
-    ///        },
     ///        "shippingAddress": {
     ///          "description": "For wallet payment methods — such as Apple Pay
     /// and PayPal — the shipping address is often already known by the\nwallet
@@ -25223,10 +25205,6 @@ pub mod types {
     ///      "type": "string",
     ///      "x-methodSpecific": true
     ///    },
-    ///    "sellerProtection": {
-    ///      "$ref":
-    /// "#/components/schemas/payment-details-seller-protection-response"
-    ///    },
     ///    "shippingAddress": {
     ///      "description": "For wallet payment methods — such as Apple Pay and
     /// PayPal — the shipping address is often already known by the\nwallet
@@ -25608,12 +25586,6 @@ pub mod types {
             skip_serializing_if = "::std::option::Option::is_none"
         )]
         pub remainder_method: ::std::option::Option<::std::string::String>,
-        #[serde(
-            rename = "sellerProtection",
-            default,
-            skip_serializing_if = "::std::option::Option::is_none"
-        )]
-        pub seller_protection: ::std::option::Option<PaymentDetailsSellerProtectionResponse>,
         ///For wallet payment methods — such as Apple Pay and PayPal — the
         /// shipping address is often already known by the
         /// wallet provider. In these cases the shipping address may be
@@ -25717,7 +25689,6 @@ pub mod types {
                 remainder_amount: Default::default(),
                 remainder_details: Default::default(),
                 remainder_method: Default::default(),
-                seller_protection: Default::default(),
                 shipping_address: Default::default(),
                 signature_date: Default::default(),
                 terminal_id: Default::default(),
@@ -50204,9 +50175,6 @@ pub mod types {
     ///      "type": "string",
     ///      "x-methodSpecific": true
     ///    },
-    ///    "sellerProtection": {
-    ///      "$ref": "#/components/schemas/payment-details-seller-protection"
-    ///    },
     ///    "shippingAddress": {
     ///      "description": "For wallet payment methods — such as Apple Pay and
     /// PayPal — the shipping address is often already known by the\nwallet
@@ -50588,12 +50556,6 @@ pub mod types {
             skip_serializing_if = "::std::option::Option::is_none"
         )]
         pub remainder_method: ::std::option::Option<::std::string::String>,
-        #[serde(
-            rename = "sellerProtection",
-            default,
-            skip_serializing_if = "::std::option::Option::is_none"
-        )]
-        pub seller_protection: ::std::option::Option<PaymentDetailsSellerProtection>,
         ///For wallet payment methods — such as Apple Pay and PayPal — the
         /// shipping address is often already known by the
         /// wallet provider. In these cases the shipping address may be
@@ -50697,7 +50659,6 @@ pub mod types {
                 remainder_amount: Default::default(),
                 remainder_details: Default::default(),
                 remainder_method: Default::default(),
-                seller_protection: Default::default(),
                 shipping_address: Default::default(),
                 signature_date: Default::default(),
                 terminal_id: Default::default(),

@@ -32609,8 +32609,6 @@ components:
               example: ...
               x-methodSpecific: true
               nullable: true
-            sellerProtection:
-              $ref: '#/components/schemas/payment-details-seller-protection'
             paypalFee:
               $ref: '#/components/schemas/amount-nullable'
             customerReference:
@@ -37375,8 +37373,6 @@ components:
               example: ...
               x-methodSpecific: true
               nullable: true
-            sellerProtection:
-              $ref: '#/components/schemas/payment-details-seller-protection-response'
             paypalFee:
               $ref: '#/components/schemas/amount-nullable'
             customerReference:
