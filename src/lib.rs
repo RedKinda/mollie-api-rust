@@ -68856,12 +68856,7 @@ pub mod types {
     ///      "$ref": "#/components/schemas/entity-payment"
     ///    },
     ///    {
-    ///      "type": "object",
-    ///      "required": [
-    ///        "amount",
-    ///        "description",
-    ///        "redirectUrl"
-    ///      ]
+    ///      "type": "object"
     ///    },
     ///    {
     ///      "type": "object",
@@ -68890,7 +68885,8 @@ pub mod types {
     /// </details>
     #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
     pub struct PaymentRequest {
-        pub amount: Amount,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub amount: ::std::option::Option<Amount>,
         ///The total amount that is already captured for this payment. Only
         /// available when this payment supports captures.
         #[serde(
@@ -69103,7 +69099,8 @@ pub mod types {
         /// method, with the absolute maximum being 255 characters. The
         /// API will not reject strings longer than the maximum length but it
         /// will truncate them to fit.
-        pub description: PaymentRequestDescription,
+        #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
+        pub description: ::std::option::Option<PaymentRequestDescription>,
         ///An object containing payment details collected during the payment
         /// process. For example, details may include the customer's
         /// card or bank details and a payment reference. For the full list of
@@ -69279,7 +69276,11 @@ pub mod types {
         ///The parameter is normally required, but can be omitted for recurring
         /// payments (`sequenceType: recurring`) and for
         /// Apple Pay payments with an `applePayPaymentToken`.
-        #[serde(rename = "redirectUrl")]
+        #[serde(
+            rename = "redirectUrl",
+            default,
+            skip_serializing_if = "::std::option::Option::is_none"
+        )]
         pub redirect_url: ::std::option::Option<::std::string::String>,
         ///Indicates the response contains a payment object. Will always
         /// contain the string `payment` for this endpoint.
@@ -69444,6 +69445,74 @@ pub mod types {
             skip_serializing_if = "::std::option::Option::is_none"
         )]
         pub webhook_url: ::std::option::Option<::std::string::String>,
+    }
+
+    impl ::std::default::Default for PaymentRequest {
+        fn default() -> Self {
+            Self {
+                amount: Default::default(),
+                amount_captured: Default::default(),
+                amount_charged_back: Default::default(),
+                amount_refunded: Default::default(),
+                amount_remaining: Default::default(),
+                apple_pay_payment_token: Default::default(),
+                application_fee: Default::default(),
+                authorized_at: Default::default(),
+                billing_address: Default::default(),
+                cancel_url: Default::default(),
+                canceled_at: Default::default(),
+                capture_before: Default::default(),
+                capture_delay: Default::default(),
+                capture_mode: Default::default(),
+                card_token: Default::default(),
+                company: Default::default(),
+                consumer_date_of_birth: Default::default(),
+                country_code: Default::default(),
+                created_at: Default::default(),
+                customer_id: Default::default(),
+                customer_reference: Default::default(),
+                description: Default::default(),
+                details: Default::default(),
+                digital_goods: Default::default(),
+                due_date: Default::default(),
+                expired_at: Default::default(),
+                expires_at: Default::default(),
+                extra_merchant_data: Default::default(),
+                failed_at: Default::default(),
+                google_pay_payment_token: Default::default(),
+                id: Default::default(),
+                is_cancelable: Default::default(),
+                issuer: Default::default(),
+                lines: Default::default(),
+                links: Default::default(),
+                locale: Default::default(),
+                mandate_id: Default::default(),
+                metadata: Default::default(),
+                method: Default::default(),
+                mode: Default::default(),
+                order_id: Default::default(),
+                paid_at: Default::default(),
+                profile_id: Default::default(),
+                redirect_url: Default::default(),
+                resource: Default::default(),
+                restrict_payment_methods_to_country: Default::default(),
+                routing: Default::default(),
+                sequence_type: Default::default(),
+                session_id: Default::default(),
+                settlement_amount: Default::default(),
+                settlement_id: Default::default(),
+                shipping_address: Default::default(),
+                status: Default::default(),
+                status_reason: Default::default(),
+                store_credentials: Default::default(),
+                subscription_id: Default::default(),
+                terminal_id: Default::default(),
+                testmode: Default::default(),
+                voucher_number: Default::default(),
+                voucher_pin: Default::default(),
+                webhook_url: Default::default(),
+            }
+        }
     }
 
     ///With Mollie Connect you can charge fees on payments that your app is

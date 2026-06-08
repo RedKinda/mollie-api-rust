@@ -34321,10 +34321,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/entity-payment'
       - type: object
-        required:
-        - amount
-        - description
-        - redirectUrl
       - type: object
         properties:
           method:

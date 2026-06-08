@@ -244,6 +244,39 @@ def denullify_path_param_schemas(doc):
             schema.pop("nullable", None)
 
 
+# Component schemas whose `required` constraints should be dropped so that all
+# of their properties become `Option<...>`. typify only emits a `Default` impl
+# for a struct when every field is optional (or has a default), so this is what
+# lets callers use `..Default::default()` on the generated request types.
+MAKE_DEFAULTABLE = {
+    "payment-request",
+}
+
+
+def make_schemas_defaultable(doc, schema_names):
+    """Remove every `required` list inside the named component schemas.
+
+    The schemas may be `allOf` compositions whose `required` lives in nested
+    `type: object` branches, so we strip `required` recursively within each
+    targeted schema.
+    """
+    comp_schemas = doc.get("components", {}).get("schemas", {})
+
+    def strip_required(node):
+        if isinstance(node, dict):
+            node.pop("required", None)
+            for value in node.values():
+                strip_required(value)
+        elif isinstance(node, list):
+            for item in node:
+                strip_required(item)
+
+    for name in schema_names:
+        schema = comp_schemas.get(name)
+        if isinstance(schema, dict):
+            strip_required(schema)
+
+
 def main():
     src, dst = sys.argv[1], sys.argv[2]
     with open(src) as f:
@@ -261,6 +294,7 @@ def main():
     walk(doc)
     dedupe_parameters(doc)
     denullify_path_param_schemas(doc)
+    make_schemas_defaultable(doc, MAKE_DEFAULTABLE)
 
     with open(dst, "w") as f:
         yaml.dump(doc, f)

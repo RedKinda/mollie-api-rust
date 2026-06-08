@@ -479,7 +479,7 @@ dependencies = [
 
 [[package]]
 name = "mollie"
-version = "0.1.5"
+version = "0.1.6"
 dependencies = [
  "bytes",
  "chrono",
@@ -554,9 +554,9 @@ dependencies = [
 
 [[package]]
 name = "progenitor-client"
-version = "0.14.0"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4e8a874cf25a33cac7a01b9c1de87bcfbc8aea93f3156d09dcc3bee516a78926"
+checksum = "3999c302f5f2a42b7ca1cc39ad9e612c74cf2910ef6e58f869e45f3068b9659f"
 dependencies = [
  "bytes",
  "futures-core",
