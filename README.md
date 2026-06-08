@@ -4,6 +4,8 @@ Mollie API client generated with [progenitor](https://github.com/oxidecomputer/p
 
 ## Usage
 
+To generate the client, first get the newest specs from https://github.com/mollie/openapi, copy it to `specs-3.0.yaml` then run `uv sync && source .venv/bin/activate && python convert_31_to_30.py specs-3.0.yaml specs-3.0-converted.yaml` to convert openapi 3.1 to 3.0 progenitor compatible spec. Then run from the parent directory `cargo progenitor  -i mollie-api-rust/specs-3.0-converted.yaml --version 0.1.0 -o mollie-api-rust --name mollie-api-rust`
+
 ### Create a Client
 ```rust
 use mollie::Client;
