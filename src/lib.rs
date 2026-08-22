@@ -58496,255 +58496,29 @@ pub mod types {
     ///    "string",
     ///    "null"
     ///  ],
-    ///  "enum": [
-    ///    "en_US",
-    ///    "en_GB",
-    ///    "nl_NL",
-    ///    "nl_BE",
-    ///    "de_DE",
-    ///    "de_AT",
-    ///    "de_CH",
-    ///    "de_LU",
-    ///    "fr_FR",
-    ///    "fr_BE",
-    ///    "fr_LU",
-    ///    "es_ES",
-    ///    "ca_ES",
-    ///    "pt_PT",
-    ///    "it_IT",
-    ///    "nb_NO",
-    ///    "sv_SE",
-    ///    "fi_FI",
-    ///    "da_DK",
-    ///    "is_IS",
-    ///    "hu_HU",
-    ///    "pl_PL",
-    ///    "lv_LV",
-    ///    "lt_LT",
-    ///    "null"
-    ///  ],
     ///  "x-speakeasy-unknown-values": "allow"
     ///}
     /// ```
     /// </details>
     #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
     #[serde(transparent)]
-    pub struct LocaleResponse(pub ::std::option::Option<LocaleResponseInner>);
+    pub struct LocaleResponse(pub ::std::option::Option<::std::string::String>);
     impl ::std::ops::Deref for LocaleResponse {
-        type Target = ::std::option::Option<LocaleResponseInner>;
-        fn deref(&self) -> &::std::option::Option<LocaleResponseInner> {
+        type Target = ::std::option::Option<::std::string::String>;
+        fn deref(&self) -> &::std::option::Option<::std::string::String> {
             &self.0
         }
     }
 
-    impl ::std::convert::From<LocaleResponse> for ::std::option::Option<LocaleResponseInner> {
+    impl ::std::convert::From<LocaleResponse> for ::std::option::Option<::std::string::String> {
         fn from(value: LocaleResponse) -> Self {
             value.0
         }
     }
 
-    impl ::std::convert::From<::std::option::Option<LocaleResponseInner>> for LocaleResponse {
-        fn from(value: ::std::option::Option<LocaleResponseInner>) -> Self {
+    impl ::std::convert::From<::std::option::Option<::std::string::String>> for LocaleResponse {
+        fn from(value: ::std::option::Option<::std::string::String>) -> Self {
             Self(value)
-        }
-    }
-
-    ///Sets the language for customer-facing content and communications.
-    ///
-    /// <details><summary>JSON schema</summary>
-    ///
-    /// ```json
-    ///{
-    ///  "description": "Sets the language for customer-facing content and
-    /// communications.",
-    ///  "examples": [
-    ///    "en_US"
-    ///  ],
-    ///  "type": "string",
-    ///  "enum": [
-    ///    "en_US",
-    ///    "en_GB",
-    ///    "nl_NL",
-    ///    "nl_BE",
-    ///    "de_DE",
-    ///    "de_AT",
-    ///    "de_CH",
-    ///    "de_LU",
-    ///    "fr_FR",
-    ///    "fr_BE",
-    ///    "fr_LU",
-    ///    "es_ES",
-    ///    "ca_ES",
-    ///    "pt_PT",
-    ///    "it_IT",
-    ///    "nb_NO",
-    ///    "sv_SE",
-    ///    "fi_FI",
-    ///    "da_DK",
-    ///    "is_IS",
-    ///    "hu_HU",
-    ///    "pl_PL",
-    ///    "lv_LV",
-    ///    "lt_LT",
-    ///    "null"
-    ///  ],
-    ///  "x-speakeasy-unknown-values": "allow"
-    ///}
-    /// ```
-    /// </details>
-    #[derive(
-        :: serde :: Deserialize,
-        :: serde :: Serialize,
-        Clone,
-        Copy,
-        Debug,
-        Eq,
-        Hash,
-        Ord,
-        PartialEq,
-        PartialOrd,
-    )]
-    pub enum LocaleResponseInner {
-        #[serde(rename = "en_US")]
-        EnUs,
-        #[serde(rename = "en_GB")]
-        EnGb,
-        #[serde(rename = "nl_NL")]
-        NlNl,
-        #[serde(rename = "nl_BE")]
-        NlBe,
-        #[serde(rename = "de_DE")]
-        DeDe,
-        #[serde(rename = "de_AT")]
-        DeAt,
-        #[serde(rename = "de_CH")]
-        DeCh,
-        #[serde(rename = "de_LU")]
-        DeLu,
-        #[serde(rename = "fr_FR")]
-        FrFr,
-        #[serde(rename = "fr_BE")]
-        FrBe,
-        #[serde(rename = "fr_LU")]
-        FrLu,
-        #[serde(rename = "es_ES")]
-        EsEs,
-        #[serde(rename = "ca_ES")]
-        CaEs,
-        #[serde(rename = "pt_PT")]
-        PtPt,
-        #[serde(rename = "it_IT")]
-        ItIt,
-        #[serde(rename = "nb_NO")]
-        NbNo,
-        #[serde(rename = "sv_SE")]
-        SvSe,
-        #[serde(rename = "fi_FI")]
-        FiFi,
-        #[serde(rename = "da_DK")]
-        DaDk,
-        #[serde(rename = "is_IS")]
-        IsIs,
-        #[serde(rename = "hu_HU")]
-        HuHu,
-        #[serde(rename = "pl_PL")]
-        PlPl,
-        #[serde(rename = "lv_LV")]
-        LvLv,
-        #[serde(rename = "lt_LT")]
-        LtLt,
-        #[serde(rename = "null")]
-        Null,
-    }
-
-    impl ::std::fmt::Display for LocaleResponseInner {
-        fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-            match *self {
-                Self::EnUs => f.write_str("en_US"),
-                Self::EnGb => f.write_str("en_GB"),
-                Self::NlNl => f.write_str("nl_NL"),
-                Self::NlBe => f.write_str("nl_BE"),
-                Self::DeDe => f.write_str("de_DE"),
-                Self::DeAt => f.write_str("de_AT"),
-                Self::DeCh => f.write_str("de_CH"),
-                Self::DeLu => f.write_str("de_LU"),
-                Self::FrFr => f.write_str("fr_FR"),
-                Self::FrBe => f.write_str("fr_BE"),
-                Self::FrLu => f.write_str("fr_LU"),
-                Self::EsEs => f.write_str("es_ES"),
-                Self::CaEs => f.write_str("ca_ES"),
-                Self::PtPt => f.write_str("pt_PT"),
-                Self::ItIt => f.write_str("it_IT"),
-                Self::NbNo => f.write_str("nb_NO"),
-                Self::SvSe => f.write_str("sv_SE"),
-                Self::FiFi => f.write_str("fi_FI"),
-                Self::DaDk => f.write_str("da_DK"),
-                Self::IsIs => f.write_str("is_IS"),
-                Self::HuHu => f.write_str("hu_HU"),
-                Self::PlPl => f.write_str("pl_PL"),
-                Self::LvLv => f.write_str("lv_LV"),
-                Self::LtLt => f.write_str("lt_LT"),
-                Self::Null => f.write_str("null"),
-            }
-        }
-    }
-
-    impl ::std::str::FromStr for LocaleResponseInner {
-        type Err = self::error::ConversionError;
-        fn from_str(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
-            match value {
-                "en_US" => Ok(Self::EnUs),
-                "en_GB" => Ok(Self::EnGb),
-                "nl_NL" => Ok(Self::NlNl),
-                "nl_BE" => Ok(Self::NlBe),
-                "de_DE" => Ok(Self::DeDe),
-                "de_AT" => Ok(Self::DeAt),
-                "de_CH" => Ok(Self::DeCh),
-                "de_LU" => Ok(Self::DeLu),
-                "fr_FR" => Ok(Self::FrFr),
-                "fr_BE" => Ok(Self::FrBe),
-                "fr_LU" => Ok(Self::FrLu),
-                "es_ES" => Ok(Self::EsEs),
-                "ca_ES" => Ok(Self::CaEs),
-                "pt_PT" => Ok(Self::PtPt),
-                "it_IT" => Ok(Self::ItIt),
-                "nb_NO" => Ok(Self::NbNo),
-                "sv_SE" => Ok(Self::SvSe),
-                "fi_FI" => Ok(Self::FiFi),
-                "da_DK" => Ok(Self::DaDk),
-                "is_IS" => Ok(Self::IsIs),
-                "hu_HU" => Ok(Self::HuHu),
-                "pl_PL" => Ok(Self::PlPl),
-                "lv_LV" => Ok(Self::LvLv),
-                "lt_LT" => Ok(Self::LtLt),
-                "null" => Ok(Self::Null),
-                _ => Err("invalid value".into()),
-            }
-        }
-    }
-
-    impl ::std::convert::TryFrom<&str> for LocaleResponseInner {
-        type Error = self::error::ConversionError;
-        fn try_from(value: &str) -> ::std::result::Result<Self, self::error::ConversionError> {
-            value.parse()
-        }
-    }
-
-    impl ::std::convert::TryFrom<&::std::string::String> for LocaleResponseInner {
-        type Error = self::error::ConversionError;
-        fn try_from(
-            value: &::std::string::String,
-        ) -> ::std::result::Result<Self, self::error::ConversionError> {
-            value.parse()
-        }
-    }
-
-    impl ::std::convert::TryFrom<::std::string::String> for LocaleResponseInner {
-        type Error = self::error::ConversionError;
-        fn try_from(
-            value: ::std::string::String,
-        ) -> ::std::result::Result<Self, self::error::ConversionError> {
-            value.parse()
         }
     }
 
